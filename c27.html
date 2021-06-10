@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Mozilla Türkiye Gönüllü Topluluğu [C Öğreticisi 27 (Bellek Yönetimi)] </title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Mozilla Türkiye Gönüllü Topluluğu Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">			
+					<img class="profile-image mb-3 rounded-corners mx-auto" src="assets/images/mozilla-turkey.png" alt="image" >
+					<div class="bio mb-3">Topluluğumuzun öğretici, haberler gibi yazı içeriklerini burada paylaşacağız.<br> <!-- <a href="about.html">Daha fazlası için</a></div> //bio--> </div>
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="https://twitter.com/MozillaTurkey"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://github.com/Mozilla-Turkey/"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://discord.gg/YvMbm6X8xC"><i class="fab fa-discord fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Anasayfa</a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="blog-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Gönderiler<span class="sr-only">(current)</span></a>
+					</li>
+				<!--	<li class="nav-item">
+					    <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>Hakkımızda</a>
+					</li> -->
+				</ul>
+			</div>
+		</nav>
+    </header>
+
+    <div class="main-wrapper">
+	    
+	    <section>
+	    <!-- <section class="blog-list px-3 py-5 p-md-5"> -->
+		    <div class="container">
+			    <div class="item mb-5">
+				    <div class="media">
+					  
+					    <div class="media-body">
+						    <h2 class="title mb-1">C Öğreticisi 27 (Bellek Yönetimi)</h2>
+						    <br />
+						    <p>Bu yazılar <a href = "https://www.tutorialspoint.com/cprogramming" />https://www.tutorialspoint.com/cprogramming/</a> adresindeki yazı dizilerinin çevirileridir.</p>
+						    <p>Bu bölüm C’deki dinamik bellek yönetimini açıklar. C programlama dili bellek tahsisi ve yönetimi için çeşitli fonksiyonlar sağlar. Bu fonksiyonlar <stdlib.h> başlık dosyasında bulunabilir.</p>
+						   <img src="assets/images/bellek.png" width="500" height="200" alt="image" > 	
+<h3>Belleği Dinamik Olarak Ayırma</h3>
+<p>Programlama sırasında, bir dizinin boyutunun farkındaysanız, o zaman işler kolaydır ve onu bir dizi olarak tanımlayabilirsiniz. Örneğin, herhangi bir kişinin adını saklamak için en fazla 100 karaktere kadar gidebilir, böylece bir şeyi aşağıdaki gibi tanımlayabilirsiniz -</p>
+<pre>
+	<code>
+char ad[100];
+	</code>
+</pre>
+<p>Ancak şimdi saklamanız gereken metnin uzunluğu hakkında hiçbir fikrinizin olmadığı bir durumu ele alalım, örneğin, bir konu hakkında ayrıntılı bir açıklama saklamak istiyorsunuz. Burada, ne kadar bellek gerektiğini tanımlamaksızın karaktere bir işaretçi tanımlamamız gerekiyor ve daha sonra, gereksinime bağlı olarak, aşağıdaki örnekte gösterildiği gibi bellek ayırabiliriz -</p>
+
+<pre>
+	<code>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main() {
+char ad[100];
+char *aciklama;
+strcpy(ad, “Zara Ali”);
+/* dinamik hafıza ayrılıyor */
+aciklama = malloc( 200 * sizeof(char) );
+if( aciklama == NULL ) {
+fprintf(stderr, “Hata — gereken hafiza ayrilamadi\n”);
+} else {
+strcpy( description, “Zara Ali 10. sinif bir DPS ogrencisidir);
+}
+printf(“Ad = %s\n”, ad );
+printf(“Aciklama: %s\n”, aciklama );
+}
+	</code>
+</pre>
+
+<p>Program derlenip çalıştırıldığında -</p>
+
+<pre>
+	<code>
+Ad = Zara Ali
+Aciklama: Zara Ali 10. sinif bir DPS ogrencisidir
+	</code>
+</pre>
+
+<p>Aynı program calloc (); tek şey malloc’u calloc ile aşağıdaki gibi değiştirmeniz gerekiyor -</p>
+<pre>
+	<code>
+calloc(200, sizeof(char));
+	</code>
+</pre>
+<p>Böylece tam kontrole sahip olursunuz ve bellek tahsis edilirken herhangi bir boyut değerini iletebilirsiniz, boyut belirlendikten sonra değiştiremediğiniz dizilerden farklı olarak.</p>
+
+<h3>Belleği Yeniden Boyutlandırma ve Serbest Bırakma</h3>
+<p>Programınız çıktığında, işletim sistemi programınız tarafından ayrılan tüm belleği otomatik olarak serbest bırakır, ancak artık belleğe ihtiyacınız olmadığında iyi bir uygulama olarak, fonksiyonu free () diyerek bu belleği serbest bırakmanız gerekir.</p>
+<p>Alternatif olarak, realloc () fonksiyonunu çağırarak tahsis edilmiş bir bellek bloğunun boyutunu artırabilir veya azaltabilirsiniz. Yukarıdaki programı bir kez daha kontrol edelim ve realloc () ve free () fonksiyonlarını kullanalım -</p>
+<pre>
+	<code>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main() {
+char ad[100];
+char *aciklama;
+strcpy(ad, “Zara Ali”);
+/* dinamik hafıza ayrılıyor */
+aciklama = malloc( 30 * sizeof(char) );
+if( aciklama == NULL ) {
+fprintf(stderr, “Hata — gereken hafiza ayrilamadi\n”);
+} else {
+strcpy( description, “Zara ali bir DPS ogrencisidir.”);
+}
+/* daha büyük bir açıklama saklamak istediğinizi varsayalım \n */
+aciklama = realloc( aciklama, 100 * sizeof(char) );
+if( aciklama == NULL ) {
+fprintf(stderr, “Hata — gereken hafiza ayrilamadi\n”);
+} else {
+strcat( description, “10. siniftadir”);
+}
+printf(“Ad = %s\n”, ad );
+printf(“Aciklama: %s\n”, aciklama );
+/* free() fonksiyonunu kullanarak belleği serbest bırakın */
+free(aciklama);
+}
+	</code>
+</pre>
+<p>Yukarıdaki kod derlendiğinde ve yürütüldüğünde, aşağıdaki sonucu verir.</p>
+
+<pre>
+	<code>
+Name = Zara Ali
+Aciklama: Zara ali bir DPS ogrencisidir.10. siniftadir
+	</code>
+</pre>
+<p>Ek belleği yeniden ayırmadan yukarıdaki örneği deneyebilirsiniz ve strcat () işlevi, kullanılabilir bellek eksikliğinden dolayı hata verecektir.</p>
+
+
+<a href = "https://www.tutorialspoint.com/cprogramming/c_memory_management.htm">https://www.tutorialspoint.com/cprogramming/c_memory_management.htm</a></p>
+
+
+
+							<h4>
+							<a href = "c28.html">Bir sonraki yazıya buradan ulaşabilirsiniz.</a></h4>
+
+
+					    </div><!--//media-body-->
+				    </div><!--//media-->
+			    </div><!--//item-->
+			    <div class="item mb-5">
+				    <div class="media">
+
+				    	</section>
+
+
+    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+	        <small class="copyright">Para için <!--<i class="fas fa-heart" style="color: #fb866a;"></i> -->değil, <target=_"blank">insanlık için internet</small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+    
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    
+
+</body>
+</html> 

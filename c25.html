@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Mozilla Türkiye Gönüllü Topluluğu [C Öğreticisi 25 (Rekürsiyon (Özyineleme))] </title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Mozilla Türkiye Gönüllü Topluluğu Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">			
+					<img class="profile-image mb-3 rounded-corners mx-auto" src="assets/images/mozilla-turkey.png" alt="image" >
+					<div class="bio mb-3">Topluluğumuzun öğretici, haberler gibi yazı içeriklerini burada paylaşacağız.<br> <!-- <a href="about.html">Daha fazlası için</a></div> //bio--> </div>
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="https://twitter.com/MozillaTurkey"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://github.com/Mozilla-Turkey/"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://discord.gg/YvMbm6X8xC"><i class="fab fa-discord fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Anasayfa</a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="blog-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Gönderiler<span class="sr-only">(current)</span></a>
+					</li>
+				<!--	<li class="nav-item">
+					    <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>Hakkımızda</a>
+					</li> -->
+				</ul>
+			</div>
+		</nav>
+    </header>
+
+    <div class="main-wrapper">
+	    
+	    <section>
+	    <!-- <section class="blog-list px-3 py-5 p-md-5"> -->
+		    <div class="container">
+			    <div class="item mb-5">
+				    <div class="media">
+					  
+					    <div class="media-body">
+						    <h2 class="title mb-1">C Öğreticisi 25 (Rekürsiyon (Özyineleme))</h2>
+						    <br />
+						    <p>Bu yazılar <a href = "https://www.tutorialspoint.com/cprogramming" />https://www.tutorialspoint.com/cprogramming/</a> adresindeki yazı dizilerinin çevirileridir.</p>
+						    <p>Özyineleme, öğeleri kendine benzer bir şekilde tekrarlama işlemidir. Programlama dillerinde, bir program aynı fonksiyon içindeki bir fonksiyonu çağırmanıza izin veriyorsa, fonksiyonun özyinelemeli çağrısı olarak adlandırılır.</p>
+<pre>
+	<code>
+void ozYineleme() {
+ozYineleme(); /* fonksiyon kendisini cagirir */
+}
+int main() {
+ozYineleme();
+}
+	</code>
+</pre>
+<p>C programlama dili özyinelemeyi, yani kendini çağıracak bir fonksiyonu destekler. Ancak özyineleme kullanırken, programcıların fonksiyondan bir çıkış koşulu tanımlamaya dikkat etmeleri gerekir, aksi takdirde sonsuz bir döngüye girer.</p>
+<p>Özyinelemeli fonksiyonlar, bir sayının faktöriyelini hesaplama, Fibonacci dizileri oluşturma, vb. gibi birçok matematiksel problemi çözmek için çok yararlıdır.</p>
+
+<h3>Faktöriyel</h3>
+<p>Aşağıdaki örnek verilen numaranın faktöriyelini özyinelemeli fonksiyonla hesaplar -</p>
+<pre>
+	<code>
+#include <stdio.h>
+unsigned long long int faktoriyel(unsigned int i) {
+if(i <= 1) {
+return 1;
+}
+return i * faktoriyel(i — 1);
+}
+int main() {
+int i = 12;
+printf(“ %d’nin faktoriyeli = %d \n”, i, faktoriyel(i));
+return 0;
+}
+	</code>
+</pre>
+
+<p>Yukarıdaki kod derlenip çalıştırıldığında -</p>
+
+<pre>
+	<code>
+12’nin faktoriyeli = 479001600
+	</code>
+</pre>
+
+<h3>Fibonacci Dizileri</h3>
+
+<p>Aşağıdaki örnek, yinelemeli bir fonksiyon kullanarak belirli bir sayı için Fibonacci dizisini oluşturur -</p>
+
+<pre>
+	<code>
+#include <stdio.h>
+int fibonacci(int i) {
+if(i == 0) {
+return 0;
+}
+if(i == 1) {
+return 1;
+}
+return fibonacci(i-1) + fibonacci(i-2);
+}
+int main() {
+int i;
+for (i = 0; i < 10; i++) {
+printf(“%d\t\n”, fibonacci(i));
+}
+return 0;
+}
+	</code>
+</pre>
+
+<p>Yukarıdaki kod derlenip çalıştırıldığında -</p>
+
+<pre>
+	<code>
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+	</code>
+</pre>
+
+<a href = "https://www.tutorialspoint.com/cprogramming/c_recursion.htm">https://www.tutorialspoint.com/cprogramming/c_recursion.htm</a></p>
+
+
+
+							<h4>
+							<a href = "c26.html">Bir sonraki yazıya buradan ulaşabilirsiniz.</a></h4>
+
+
+					    </div><!--//media-body-->
+				    </div><!--//media-->
+			    </div><!--//item-->
+			    <div class="item mb-5">
+				    <div class="media">
+
+				    	</section>
+
+
+    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+	        <small class="copyright">Para için <!--<i class="fas fa-heart" style="color: #fb866a;"></i> -->değil, <target=_"blank">insanlık için internet</small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+    
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+        
+
+</body>
+</html> 

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Mozilla Türkiye Gönüllü Topluluğu [C Öğreticisi 20 (Dosya Açıp Kapatma)] </title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Mozilla Türkiye Gönüllü Topluluğu Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">			
+					<img class="profile-image mb-3 rounded-corners mx-auto" src="assets/images/mozilla-turkey.png" alt="image" >
+					<div class="bio mb-3">Topluluğumuzun öğretici, haberler gibi yazı içeriklerini burada paylaşacağız.<br> <!-- <a href="about.html">Daha fazlası için</a></div> //bio--> </div>
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="https://twitter.com/MozillaTurkey"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://github.com/Mozilla-Turkey/"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://discord.gg/YvMbm6X8xC"><i class="fab fa-discord fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Anasayfa</a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="blog-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Gönderiler<span class="sr-only">(current)</span></a>
+					</li>
+					<!-- <li class="nav-item">
+					    <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>Hakkımızda</a>
+					</li> -->
+				</ul>
+			</div>
+		</nav>
+    </header>
+
+    <div class="main-wrapper">
+	    
+	    <section>
+	    <!-- <section class="blog-list px-3 py-5 p-md-5"> -->
+		    <div class="container">
+			    <div class="item mb-5">
+				    <div class="media">
+					  
+					    <div class="media-body">
+						    <h2 class="title mb-1">C Öğreticisi 20 (Dosya Açıp Kapatma)</h2>
+						    <br />
+						    <p>Bu yazılar <a href = "https://www.tutorialspoint.com/cprogramming" />https://www.tutorialspoint.com/cprogramming/</a> adresindeki yazı dizilerinin çevirileridir.</p>
+						    <p>Son bölümde C programlama dili tarafından kullanılan standart giriş ve çıkış cihazları açıklanmıştır. Bu bölüm, C programcılarının veri depolama için nasıl metin veya ikili dosyalar oluşturabileceğini, açabileceğini, kapatabileceğini kapsar.</p>
+						    <p>Bir dosya, metin dosyası veya ikili dosya olmasına bakılmaksızın bir bayt dizisini temsil eder. C programlama dili, depolama cihazlarınızdaki dosyaları işlemek için üst düzey işlevlere ve düşük düzeyli (işletim sistemi düzeyinde) çağrılara erişim sağlar.</p>
+
+						    <h3>Dosyayı Açmak</h3>
+<p>Yeni bir dosya oluşturmak veya mevcut bir dosyayı açmak için fopen () fonksiyonunu kullanabilirsiniz. Bu çağrı, akışı kontrol etmek için gerekli tüm bilgileri içeren FILE(dosya) türünde bir obje başlatır.</p>
+
+
+<p>Bu fonksiyonun prototipi aşağıdaki gibidir -</p>
+
+<pre>
+	<code>
+FILE *fopen(sabit char * dosyaAdı, sabit char * erişim modu );
+	</code>
+</pre>
+
+
+<p>Burada, dosya adı, dosyanızı adlandırmak için kullanacağınız bir dize değişmezidir ve erişim modu aşağıdaki değerlerden birine sahip olabilir -</p>
+<p>İkili dosyaları işleyecekseniz, yukarıda belirtilenler yerine aşağıdaki erişim modlarını kullanırsınız -</p>
+<p>“rb”, “wb”, “ab”, “rb+”, “r+b”, “wb+”, “w+b”, “ab+”, “a+b”</p>
+
+<h3>Dosyayı Kapatmak</h3>
+<p>Bir dosyayı kapatmak için fclose () fonksiyonunu kullanın. Bu fonksiyonun prototipi -</p>
+<pre>
+	<code>
+int fclose( FILE *fp );
+	</code>
+</pre>
+<p>Fclose (-) fonksiyonu başarı durumunda sıfır veya dosyayı kapatırken bir hata varsa EOF döndürür. Bu fonksiyon aslında arabellekte bekleyen verileri temizler, dosyayı kapatır ve dosya için kullanılan belleği serbest bırakır.</p>
+<p>EOF stdio.h başlık dosyasında tanımlanan bir sabittir.</p>
+<p>C standart kitaplığı tarafından bir dosyayı, karakter karakter veya sabit uzunluklu dize biçiminde bir dosyayı okumak ve yazmak için sağlanan çeşitli fonksiyonlar vardır.</p>
+
+<h3>Bir Dosyaya Yazmak</h3>
+
+<p>Bir akışa tek tek karakter yazmak için en basit komut aşağıdadır -</p>
+
+<pre>
+	<code>
+int fputc( int c, FILE *fp );
+	</code>
+</pre>
+
+<p>Fputc () fonksiyonu, c bağımsız değişkeninin karakter değerini fp tarafından başvurulan çıkış akışına yazar. Başarıyla sonuçlanırsa yazılı karakteri, bir hata varsa EOF’u döndürür. Bir akışa boş sonlandırılmış bir dize yazmak için aşağıdaki komutları kullanabilirsiniz -</p>
+
+<pre>
+	<code>
+int fputs( const char *s, FILE *fp );
+	</code>
+</pre>
+
+<p>Fputs () fonksiyonu, s dizesini fp tarafından başvurulan çıkış akışına yazar. Başarı durumunda negatif olmayan bir değer döndürür, herhangi bir hata durumunda EOF döndürülür. Bir dosyaya dize yazmak için int fprintf (FILE * fp, const char * format, …) fonksiyonunu da kullanabilirsiniz. Aşağıdaki örneği deneyin.</p>
+<p>/tmp dizininizin kullanılabilir olduğundan emin olun. Değilse, devam etmeden önce bu dizini makinenizde oluşturmanız gerekir.</p>
+
+
+<pre>
+	<code>
+#include <stdio.h>
+main() {
+FILE *fp;
+fp = fopen(“/tmp/test.txt”, “w+”);
+fprintf(fp, “Bu fprintf fonksiyonunu deneme yazısıdır\n”);
+fputs(“Bu fputs fonksiyonunu deneme yazısıdır\n”, fp);
+fclose(fp);
+}
+	</code>
+</pre>
+
+<p>Yukarıdaki kod derlendiğinde ve çalıştırıldığında, /tmp dizininde yeni bir test.txt dosyası oluşturur ve iki farklı fonksiyon kullanarak iki satır yazar. Bir sonraki bölümde bu dosyayı okuyalım.</p>
+
+<h3>Dosyayı Okumak</h3>
+<p>Aşağıda, bir dosyadan tek bir karakteri okumak için en basit komut verilmiştir -</p>
+<pre>
+	<code>
+int fgetc( FILE * fp );
+	</code>
+</pre>
+<p>Fgetc () işlevi, giriş dosyasından fp tarafından başvurulan bir karakteri okur. Dönüş değeri okunan karakterdir veya herhangi bir hata durumunda EOF döndürür. Aşağıdaki fonksiyon bir akıştan bir dize okunmasına izin verir -</p>
+
+<pre>
+	<code>
+char *fgets( char *buf, int n, FILE *fp );
+	</code>
+</pre>
+
+<p>Fgets () fonksiyonu, fp tarafından başvurulan giriş akışından n-1 karaktere kadar okur. Dizeyi sonlandırmak için boş bir karakter ekleyerek, okunan dizeyi arabellek arabelleğine kopyalar.</p>
+<p>Bu fonksiyon, maksimum karakter sayısını okumadan önce yeni satır karakteri ‘\ n’ veya EOF dosyasının sonuna rastlarsa, yalnızca yeni satır karakteri de dahil olmak üzere o noktaya kadar okunan karakterleri döndürür.</p>
+<p>Bir dosyadan dizeleri okumak için int fscanf (FILE * fp, const char * format, …) işlevini de kullanabilirsiniz, ancak ilk boşluk karakteriyle karşılaştıktan sonra okumayı durdurur. Bir dosyadan dizeleri okumak için int fscanf (FILE * fp, const char * format, …) fonksiyonunu da kullanabilirsiniz, ancak ilk boşluk karakteriyle karşılaştıktan sonra okumayı durdurur.</p>
+<pre>
+	<code>
+#include <stdio.h>
+main() {
+FILE *fp;
+char buff[255];
+fp = fopen(“/tmp/test.txt”, “r”);
+fscanf(fp, “%s”, buff);
+printf(“1 : %s\n”, buff );
+fgets(buff, 255, (FILE*)fp);
+printf(“2: %s\n”, buff );
+fgets(buff, 255, (FILE*)fp);
+printf(“3: %s\n”, buff );
+fclose(fp);
+}
+	</code>
+</pre>
+
+<p>Yukarıdaki kod derlendiğinde ve çalıştırıldığında, önceki bölümde oluşturulan dosyayı okur ve aşağıdaki sonucu verir -</p>
+
+<pre>
+	<code>
+1: Bu
+2: Bu fprintf fonksiyonunu deneme yazısıdır
+3: Bu fputs fonksiyonunu deneme yazısıdır
+	</code>
+</pre>
+
+<p>Burada neler olduğu hakkında biraz daha ayrıntı görelim. İlk olarak, fscanf () salt okunur Bu, bundan sonra bir boşlukla karşılaştığı için ikinci çağrı, satır sonuna kadar kalan satırı okuyan fgets () içindir. Son olarak, son çağrı fgets () ikinci satırı tamamen okur.</p>
+
+<h3>İkili Girdi Çıktı Fonksiyonları</h3>
+
+<p>İkili giriş ve çıkış için kullanılabilecek iki fonksiyon vardır -</p>
+<pre>
+	<code>
+size_t fread(void *ptr, size_t size_of_elements, size_t number_of_elements, FILE *a_file);
+size_t fwrite(const void *ptr, size_t size_of_elements, size_t number_of_elements, FILE *a_file);
+	</code>
+</pre>
+<p>Bu fonksiyonların her ikisi de, genellikle diziler veya structlar olmak üzere bellek bloklarını okumak veya yazmak için kullanılmalıdır.</p>
+
+<a href = "https://www.tutorialspoint.com/cprogramming/c_file_io.htm">https://www.tutorialspoint.com/cprogramming/c_file_io.htm</a></p>
+
+
+
+							<h4>
+							<a href = "c21.html">Bir sonraki yazıya buradan ulaşabilirsiniz.</a></h4>
+
+
+					    </div><!--//media-body-->
+				    </div><!--//media-->
+			    </div><!--//item-->
+			    <div class="item mb-5">
+				    <div class="media">
+
+				    	</section>
+
+
+    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+	        <small class="copyright">Para için <!--<i class="fas fa-heart" style="color: #fb866a;"></i> -->değil, <target=_"blank">insanlık için internet</small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+    
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+  
+
+</body>
+</html> 

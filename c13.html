@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Mozilla Türkiye Gönüllü Topluluğu [C Öğreticisi 13 (İşaretçiler)] </title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Mozilla Türkiye Gönüllü Topluluğu Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">			
+					<img class="profile-image mb-3 rounded-corners mx-auto" src="assets/images/mozilla-turkey.png" alt="image" >
+					<div class="bio mb-3">Topluluğumuzun öğretici, haberler gibi yazı içeriklerini burada paylaşacağız.<br> <!-- <a href="about.html">Daha fazlası için</a></div> //bio--> </div>
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="https://twitter.com/MozillaTurkey"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://github.com/Mozilla-Turkey/"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://discord.gg/YvMbm6X8xC"><i class="fab fa-discord fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Anasayfa</a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="blog-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Gönderiler<span class="sr-only">(current)</span></a>
+					</li>
+					<!-- <li class="nav-item">
+					    <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>Hakkımızda</a>
+					</li> -->
+				</ul>
+			</div>
+		</nav>
+    </header>
+
+    <div class="main-wrapper">
+	    
+	    <section>
+	    <!-- <section class="blog-list px-3 py-5 p-md-5"> -->
+		    <div class="container">
+			    <div class="item mb-5">
+				    <div class="media">
+					  
+					    <div class="media-body">
+						    <h2 class="title mb-1">C Öğreticisi 13 (İşaretçiler)</h2>
+						    <br />
+						    <p>Bu yazılar <a href = "https://www.tutorialspoint.com/cprogramming" />https://www.tutorialspoint.com/cprogramming/</a> adresindeki yazı dizilerinin çevirileridir.</p>
+						    <p>C’deki İşaretçiler’i öğrenmesi kolay ve eğlencelidir. Bazı C programlama görevleri işaretçilerle çok daha kolay gerçeklenir, ve diğer bazı görevler (dinamik bellek ayrımı gibi) işaretçiler olmadan gerçeklenemez. Bu yüzden iyi bir C programcısı olmak için işaretçileri öğrenmek kaçınılmazdır. Hadi öğrenmeye basit adımlarla başlayalım.</p>
+
+						    <p>Bildiğiniz gibi her değişken bir hafıza bölmesidir ve her hafıza bölmesi ampersand(&) sembolü ile erişilebilen tanımlanmış bir adrese sahiptir. Tanımlanmış değişkenlerin adresini yazdıran takip eden örneği dikkate alın -</p>
+<pre>
+	<code>
+#include <stdio.h>
+int main () {
+int degisken1;
+char degisken2[10];
+printf(“Degisken 1’in adresi: %x\n”, &degisken1 );
+printf(“Degisken 2’nin adresi: %x\n”, &degisken2 );
+return 0;
+}		
+	</code>
+</pre>
+						
+<p>Kod derlenip çalıştırıldığında takip eden sonuç çıkar -</p>
+
+<pre>
+	<code>
+Degisken 1’in adresi: bff5a400
+Degisken 2’nin adresi: bff5a3f6
+	</code>
+</pre>
+
+<h3>İşaretçiler Nedir?</h3>
+
+<p>Bir işaretçi, bir değişkenin adresini gösteren diğer bir değişkendir, diğer bir deyişle, bellekteki erişimin direkt adresidir. Genel bir işaretçi tanımlaması şöyledir -</p>
+
+<pre>
+	<code>
+tip *değişkenİsmi;
+	</code>
+</pre>
+
+<p>İşte işaretçilerin temel tipi; geçerli bir C veri türü olmalı ve değişkenİsmi işaretçi değişkenin ismi olmalıdır. İşaretçiyi bildirmek için kullanılan asterisk işareti * çarpma için kullanılan işaretle aynıdır. Ancak, bu ifadede asterisk işareti bir değişkeni işaretçi olarak belirlemek için kullanılmaktadır. Geçerli işaretçi bildirimlerinin bazılarına göz atın -</p>
+
+
+<pre>
+	<code>
+int *ip; /* tamsayı değer bir işaretçi */
+double *dp; /* double değer bir işaretçi */
+float *fp; /* float değer bir işaretçi */
+char *ch /* char değer bir işaretçi */
+	</code>
+</pre>
+<p>Tamsayı, float, char veya başka bir şekilde olsun, tüm işaretçilerin değerinin gerçek veri türü, bir bellek adresini temsil eden uzun bir onaltılık(hexadecimal) sayıdır. Farklı veri türlerinin işaretçileri arasındaki tek fark, işaretçinin işaret ettiği değişken veya sabitin veri tipidir.</p>
+<h3>İşaretçiler Nasıl Kullanılır?</h3>
+<p>İşaretçilerin yardımıyla çok sık yapacağımız birkaç önemli işlem var. (a) Bir işaretçi değişkeni tanımlarız, (b) bir değişkenin adresini bir işaretçiye atar ve (c) son olarak işaretçi değişkeninde bulunan adresteki değere erişiriz.</p>
+<p>Bu, işleneni tarafından belirtilen adreste bulunan değişkenin değerini döndüren tekli operatör * kullanılarak yapılır. Aşağıdaki örnek bu işlemleri kullanır -</p>
+<pre>
+	<code>
+#include <stdio.h>
+int main () {
+int var = 20; /* gerçek değişken bildirimi */
+int *ip; /* işaretçi değişken bildirimi */
+ip = &var; /* var değişkenini işaretçi değişkeninde sakla*/
+printf(“degiskenin adresi: %x\n”, &var );
+/* ip degiskeninde saklanan adres*/
+printf(“ip degiskeninde saklanan adres: %x\n”, ip );
+/* işaretçi kullanarak değere erişimi */
+printf(“*ip degiskeninin degeri: %d\n”, *ip );
+return 0;
+}
+	</code>
+</pre>
+<p>Yukarıdaki kod derlenip çalıştırıldığında, takip eden sonuç ortaya çıkar -</p>
+<pre>
+	<code>
+degiskenin adresi: bffd8b3c
+ip degiskeninde saklanan adres: bffd8b3c
+ip degiskeninin degeri: 20
+	</code>
+</pre>
+
+<h3>NULL İşaretçiler</h3>
+<p>Tam olarak atanacak bir adresiniz yoksa, bir işaretçi değişkenine NULL değeri atamak her zaman iyi bir uygulamadır. NULL olarak atanan işaretçiye null işaretçi denir. NULL işaretçisi, birkaç standart kütüphanede tanımlanan sıfır değerine sahip bir sabittir. Aşağıdaki programı düşünün -</p>
+
+<pre>
+	<code>
+double maaş = dizi[9];
+	</code>
+</pre>
+<p>Bu kod bizi dizinin 10.elemanına götürür, Aşağıdaki kod, bildirim, atama ve dizilere erişme’yi gösterir -</p>
+<pre>
+	<code>
+#include <stdio.h>
+int main () {
+int *ptr = NULL;
+printf(“ptr’nin değeri : %x\n”, ptr );
+return 0;
+}
+	</code>
+</pre>
+<p>Yukarıdaki kod derlenip çalıştırıldığında, takip eden sonuç ortaya çıkar -</p>
+<pre>
+	<code>
+ptr’nin değeri: 0
+	</code>
+</pre>
+
+<p>İşletim sistemlerinin çoğunda, programların 0 adresindeki belleğe erişmesine izin verilmez, çünkü bu bellek işletim sistemi tarafından ayrılmıştır. Ancak, bellek adresi 0 özel bir öneme sahiptir; işaretçinin erişilebilir bir bellek konumunu göstermesi amaçlanmadığını belirtir.</p>
+<p>Ancak kural gereği, eğer bir işaretçi boş (sıfır) değer içeriyorsa, hiçbir şeye işaret etmeyeceği varsayılır. Boş bir işaretçi olup olmadığını kontrol etmek için ‘if’ ifadesini aşağıdaki gibi kullanabilirsiniz -</p>
+<pre>
+	<code>
+if(ptr) /* işaretçi boş değilse başarılı */
+if(!ptr) /* işaretçi boşsa başarılı */		
+	</code>
+</pre>
+
+<h3>Detaylıca İşaretçiler</h3>
+
+<img src="assets/images/isaretciler.png" width="500" height="200" alt="image" >
+
+<a href = "https://www.tutorialspoint.com/cprogramming/c_pointers.htm">​https://www.tutorialspoint.com/cprogramming/c_pointers.htm​</a></p>
+
+
+
+							<h4>
+							<a href = "c14.html">Bir sonraki yazıya buradan ulaşabilirsiniz.</a></h4>
+
+
+					    </div><!--//media-body-->
+				    </div><!--//media-->
+			    </div><!--//item-->
+			    <div class="item mb-5">
+				    <div class="media">
+
+				    	</section>
+
+
+    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+	        <small class="copyright">Para için <!--<i class="fas fa-heart" style="color: #fb866a;"></i> -->değil, <target=_"blank">insanlık için internet</small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+    
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+  
+</body>
+</html> 

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Mozilla Türkiye Gönüllü Topluluğu [C Öğreticisi 19 (Girdi ve Çıktı)] </title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Mozilla Türkiye Gönüllü Topluluğu Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">			
+					<img class="profile-image mb-3 rounded-corners mx-auto" src="assets/images/mozilla-turkey.png" alt="image" >
+					<div class="bio mb-3">Topluluğumuzun öğretici, haberler gibi yazı içeriklerini burada paylaşacağız.<br> <!-- <a href="about.html">Daha fazlası için</a></div> //bio--> </div>
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="https://twitter.com/MozillaTurkey"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://github.com/Mozilla-Turkey/"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://discord.gg/YvMbm6X8xC"><i class="fab fa-discord fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Anasayfa</a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="blog-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Gönderiler<span class="sr-only">(current)</span></a>
+					</li>
+				<!--	<li class="nav-item">
+					    <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>Hakkımızda</a>
+					</li> -->
+				</ul>
+			</div>
+		</nav>
+    </header>
+
+    <div class="main-wrapper">
+	    
+	    <section>
+	    <!-- <section class="blog-list px-3 py-5 p-md-5"> -->
+		    <div class="container">
+			    <div class="item mb-5">
+				    <div class="media">
+					  
+					    <div class="media-body">
+						    <h2 class="title mb-1">C Öğreticisi 19 (Girdi ve Çıktı)</h2>
+						    <br />
+						    <p>Bu yazılar <a href = "https://www.tutorialspoint.com/cprogramming" />https://www.tutorialspoint.com/cprogramming/</a> adresindeki yazı dizilerinin çevirileridir.</p>
+						    <p>Girdi dediğimizde bu programa bir veri alışı anlamına gelir. Girdi bir dosya biçimi olabileceği gibi komut satırından da alınabilir. C programlama gerektiğinde girdiyi okumak ve programda kullanmak için gereklilikleri sağlar.</p>
+						    <p>Çıktı dediğimizde bu ekranda gözüken bir veri anlamına gelir, yazıcı veya herhangi bir dosya. C programlama bilgisayar ekranında göstermek veya metin/ikili dosya biçimde saklamak için gereklilikleri sağlar.</p>
+						    <h3>Standart Dosyalar</h3>
+<p>C programlama tüm cihazlara dosyalar olarak davranır. Böylece ekran gibi cihazlar dosyalarla aynı şekilde ele alınır ve bir program yürütüldüğünde, klavyeye ve ekrana erişim sağlamak için aşağıdaki üç dosya otomatik olarak açılır.</p>
+<img src="assets/images/standart-dosya.png" width="500" height="150" alt="image" >
+
+<p>Dosya işaretçileri, okuma ve yazma amacıyla dosyaya erişmenin yoludur. Bu bölümde, değerlerin ekrandan nasıl okunacağı ve sonucun ekranda nasıl yazdırılacağı açıklanmaktadır.</p>
+
+<h3>getchar() ve putchar() Fonksiyonları</h3>
+<p>int getchar(void) fonksiyonu bir sonraki kullanılabilir karakteri ekrandan okur ve bir tamsayı olarak döndürür. Bu fonksiyon bir kerede sadece bir karakter okur. Ekrandan birden fazla karakter okumak istemeniz durumunda döngüde bu yöntemi kullanabilirsiniz.</p>
+<p>int putchar(int c) fonksiyonu iletilen karakteri ekrana koyar ve aynı karakteri döndürür. Bu fonksiyon bir kerede sadece bir karakter koyar. Ekranda birden fazla karakter görüntülemek istemeniz durumunda döngüde bu yöntemi kullanabilirsiniz. Aşağıdaki örneği kontrol edin -</p>
+<pre>
+	<code>
+#include <stdio.h>
+int main( ) {
+int c;
+printf( “Deger girin:”);
+c = getchar( );
+printf( “\nSunu girdiniz: “);
+putchar( c );
+return 0;
+}
+	</code>
+</pre>
+
+
+<p>Yukarıdak, kod derlenip çalıştırıldığında, metin girmenizi bekler. Bir metin girip enter tuşuna bastığınızda, program ilerler ve sadece bir karakteri okur şöyle gözükür -</p>
+<pre>
+	<code>
+$./a.out
+Deger girin : bu bir denemedir
+Sunu girdiniz: b
+	</code>
+</pre>
+
+<h3>gets() ve puts() Fonksiyonları</h3>
+
+<p>Char * gets (char * s) fonksiyonu, bir son satırsonu veya EOF(End of File) (Dosya Sonu) olana kadar, stdin’den arabelleğe s ile gösterilen bir satırı okur.</p>
+<p>int puts (const char * s) fonksiyonu stdout’a ‘s’ ve ‘a’ sondaki yeni satırını yazar.</p>
+<p>NOT: gets() fonksiyonu kullanmaktan kaldırılmış olsa da, gets kullanmak yerine fgets() kullanmak mümkündür.</p>
+<pre>
+	<code>
+#include <stdio.h>
+int main( ) {
+char str[100];
+printf( “Deger girin :”);
+gets( str );
+printf( “\nSunu girdiniz: “);
+puts( str );
+return 0;
+}
+	</code>
+</pre>
+
+<p>Yukarıdaki kod derlendiğinde ve çalıştırıldığında metin girmenizi bekler. Bir metin girip enter tuşuna bastığınızda, program devam eder ve sonuna kadar tüm satırı okur ve aşağıdaki gibi görüntülenir -</p>
+
+<pre>
+	<code>
+$./a.out
+Deger girin : bu bir denemedir
+Sunu girdiniz: bu bir denemedir
+	</code>
+</pre>
+
+<h3>scanf() ve printf() Fonksiyonları</h3>
+<p>int scanf (const char * format, …) fonksiyonu standart giriş akışı stdin’den girişi okur ve bu girdiyi formata göre tarar.</p>
+<p>int printf (const char * format, …) fonksiyonu, çıktıyı standart çıktı akışı stdout’una yazar ve çıktıyı formata göre üretir.</p>
+<p>-Format(biçim) basit bir sabit dize olabilir, ancak sırasıyla dizeleri, tamsayı, karakter veya float yazdırmak veya okumak için % s,% d,% c,% f vb. ile belirtebilirsiniz. Gereksinimlere göre kullanılabilecek başka birçok biçimlendirme seçeneği vardır. Şimdi kavramları daha iyi anlamak için basit bir örnekle devam edelim -</p>
+
+
+<pre>
+	<code>
+#include <stdio.h>
+int main( ) {
+char str[100];
+int i;
+printf( “Deger girin :”);
+scanf(“%s %d”, str, &i);
+printf( “\nSunu girdiniz %s %d “, str, i);
+return 0;
+}
+	</code>
+</pre>
+
+<p>Yukarıdaki kod derlendiğinde ve çalıştırıldığında, metin girmenizi bekler. Bir metin girip enter tuşuna bastığınızda, program ilerler ve girişi okur ve aşağıdaki gibi görüntüler -</p>
+<pre>
+	<code>
+$./a.out
+Deger girin : yedi 7
+Sunu girdiniz: yedi 7
+	</code>
+</pre>
+<p>Burada, scanf() öğesinin, %s ve %d formatlarında girdi beklediğine dikkat edilmelidir; bu “dize tamsayı” gibi geçerli girdiler sağlamanız gerektiği anlamına gelir. Eğer “string string” değer ya da “integer integer” değer yazarsanız, yanlış girdi olarak kabul edilir. İkincisi, bir dizeyi okurken, scanf() bir boşlukla karşılaşır okumayı bırakır, bu nedenle “bu bir denemedir” scanf() için üç dizedir.</p>
+
+<a href = "​https://www.tutorialspoint.com/cprogramming/c_input_output.htm">​https://www.tutorialspoint.com/cprogramming/c_input_output.htm</a></p>
+
+
+
+							<h4>
+							<a href = "c20.html">Bir sonraki yazıya buradan ulaşabilirsiniz.</a></h4>
+
+
+					    </div><!--//media-body-->
+				    </div><!--//media-->
+			    </div><!--//item-->
+			    <div class="item mb-5">
+				    <div class="media">
+
+				    	</section>
+
+
+    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+	        <small class="copyright">Para için <!--<i class="fas fa-heart" style="color: #fb866a;"></i> -->değil, <target=_"blank">insanlık için internet</small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+   
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+ 
+
+</body>
+</html> 

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Mozilla Türkiye Gönüllü Topluluğu [C Öğreticisi 3 (Veri Tipleri)] </title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Mozilla Türkiye Gönüllü Topluluğu Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">			
+					<img class="profile-image mb-3 rounded-corners mx-auto" src="assets/images/mozilla-turkey.png" alt="image" >
+					<div class="bio mb-3">Topluluğumuzun öğretici, haberler gibi yazı içeriklerini burada paylaşacağız.<br> <!-- <a href="about.html">Daha fazlası için</a></div> //bio--> </div>
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="https://twitter.com/MozillaTurkey"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://github.com/Mozilla-Turkey/"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://discord.gg/YvMbm6X8xC"><i class="fab fa-discord fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Anasayfa</a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="blog-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Gönderiler<span class="sr-only">(current)</span></a>
+					</li>
+					<!-- <li class="nav-item">
+					    <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>Hakkımızda</a>
+					</li> -->
+				</ul>
+			</div>
+		</nav>
+    </header>
+
+    <div class="main-wrapper">
+	    
+	    <section>
+	    <!-- <section class="blog-list px-3 py-5 p-md-5"> -->
+		    <div class="container">
+			    <div class="item mb-5">
+				    <div class="media">
+					  
+					    <div class="media-body">
+						    <h2 class="title mb-1">C Öğreticisi 3 (Veri Tipleri)</h2>
+						    <br />
+						    <p>Bu yazılar <a href = "https://www.tutorialspoint.com/cprogramming" />https://www.tutorialspoint.com/cprogramming/</a> adresindeki yazı dizilerinin çevirileridir.</p>
+						    <p>C’deki veri tipleri, farklı tiplerdeki değişkenleri veya fonksiyonları bildirmek için kullanılan kapsamlı bir sistemi ifade eder.</p>
+
+						     <p>Bir değişkenin türü, hafızada ne kadar yer kaplayacağını ve depolanan bit deseninin nasıl yorumlandığını belirler.</p>
+
+						     <p>Tipler C’de aşağıdaki gibi sınıflandırılabilir -</p>
+
+							<h3>1-Basit Tipler</h3>
+							<p>Bunlar aritmetik türlerdir ve ayrıca: (a) tamsayı tipleri ve (b) kayan nokta tipleri olarak sınıflandırılırlar.</p>
+
+
+							<h3>2-Numaralandırılmış Tipler</h3>
+							<p>Yine aritmetik tiplerdir ve program boyunca yalnızca belirli tam sayı değerlerini atayabilecek değişkenleri tanımlamak için kullanılırlar.</p>
+
+							<h3>3-Void Tipi</h3>
+							<p>Void belirteci hiçbir değerin olmadığını gösterir.</p>
+
+
+
+<h3>4-Türetilmiş Tipler</h3>
+<p>Bunlar: (a) İşaretçi(pointer) tipleri, (b) Dizi(array) tipleri, © Yapı(struct) tipleri, (d) Birlik(union) tipleri ve (e) Fonks,yon tipleri.
+</p>
+<p>Dizi tipleri ve yapı tipleri toplu olarak toplu tipler olarak ifade edilir. Bir işlevin tipi, işlevin dönüş değerinin tipini belirtir. Gelecek bölümlerde diğer tiplerin ele alınacağı aşağıdaki temel türleri göreceğiz.</p>
+
+
+<h4>Tamsayı(Integer) Tipleri</h4>
+<p>Aşağıdaki tabloda, depolama boyutları(storage size) ve değer aralıklarıyla(value range) standart tamsayı türlerinin ayrıntıları verilmektedir-</p>
+<img src="assets/images/tamsayi-tipleri.png" width="600" height="350" alt="image" >
+<p>Belirli bir platformda bir türün veya değişkenin tam boyutunu elde etmek için, sizeof operatörünü kullanabilirsiniz. Sizeof (type) ifadesi, nesnenin saklama boyutunu ya da byte cinsinden yazıyı verir.</p>
+<p>Aşağıda limits.h başlık dosyasında farklı sınırlarda farklı bir makine kullanarak bir makinede çeşitli türlerin boyutlarını almak için bir örnek verilmiştir.</p>
+
+<pre>
+  <code>
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+#include <float.h>
+int main(int argc, char** argv) {
+printf(“CHAR_BIT : %d\n”, CHAR_BIT);
+printf(“CHAR_MAX : %d\n”, CHAR_MAX);
+printf(“CHAR_MIN : %d\n”, CHAR_MIN);
+printf(“INT_MAX : %d\n”, INT_MAX);
+printf(“INT_MIN : %d\n”, INT_MIN);
+printf(“LONG_MAX : %ld\n”, (long) LONG_MAX);
+printf(“LONG_MIN : %ld\n”, (long) LONG_MIN);
+printf(“SCHAR_MAX : %d\n”, SCHAR_MAX);
+printf(“SCHAR_MIN : %d\n”, SCHAR_MIN);
+printf(“SHRT_MAX : %d\n”, SHRT_MAX);
+printf(“SHRT_MIN : %d\n”, SHRT_MIN);
+printf(“UCHAR_MAX : %d\n”, UCHAR_MAX);
+printf(“UINT_MAX : %u\n”, (unsigned int) UINT_MAX);
+printf(“ULONG_MAX : %lu\n”, (unsigned long) ULONG_MAX);
+printf(“USHRT_MAX : %d\n”, (unsigned short) USHRT_MAX);
+return 0;
+}
+  </code>
+</pre>
+<p> Yukarıdaki programı derleyip çalıştırdığınızda, Linux’ta aşağıdaki sonucu verir -</p>
+<pre>
+	<code>
+CHAR_BIT : 8
+CHAR_MAX : 127
+CHAR_MIN : -128
+INT_MAX : 2147483647
+INT_MIN : -2147483648
+LONG_MAX : 9223372036854775807
+LONG_MIN : -9223372036854775808
+SCHAR_MAX : 127
+SCHAR_MIN : -128
+SHRT_MAX : 32767
+SHRT_MIN : -32768
+UCHAR_MAX : 255
+UINT_MAX : 4294967295
+ULONG_MAX : 18446744073709551615
+USHRT_MAX : 65535
+	</code>
+</pre>
+<h4>Kayan Nokta Tipleri</h4>
+<p>Aşağıdaki tablo, depolama boyutları ve değer aralıklarıyla standart kayan nokta türlerinin ayrıntılarını ve bunların hassasiyetini sağlar -</p>
+<p>float.h başlık dosyası, bu değerleri ve programlarınızdaki gerçek sayıların ikili gösterimi hakkındaki diğer ayrıntıları kullanmanıza izin veren makroları tanımlar. Aşağıdaki örnek kayan nokta tipiyle çekilen depolama alanını ve değer aralığını yazdırrır -</p>
+<pre>
+  <code>
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+#include <float.h>
+int main(int argc, char** argv) {
+printf(“Storage size for float : %d \n”, sizeof(float));
+printf(“FLT_MAX : %g\n”, (float) FLT_MAX);
+printf(“FLT_MIN : %g\n”, (float) FLT_MIN);
+printf(“-FLT_MAX : %g\n”, (float) -FLT_MAX);
+printf(“-FLT_MIN : %g\n”, (float) -FLT_MIN);
+printf(“DBL_MAX : %g\n”, (double) DBL_MAX);
+printf(“DBL_MIN : %g\n”, (double) DBL_MIN);
+printf(“-DBL_MAX : %g\n”, (double) -DBL_MAX);
+printf(“Precision value: %d\n”, FLT_DIG );
+return 0;
+}
+  </code>
+</pre>
+<p>Yukarıdaki programı derleyip çalıştırdığınızda, Linux’ta aşağıdaki sonucu verir -
+</p>
+</pre>
+<pre>
+  <code>
+Storage size for float : 4
+FLT_MAX : 3.40282e+38
+FLT_MIN : 1.17549e-38
+-FLT_MAX : -3.40282e+38
+-FLT_MIN : -1.17549e-38
+DBL_MAX : 1.79769e+308
+DBL_MIN : 2.22507e-308
+-DBL_MAX : -1.79769e+308
+Precision value: 6
+  </code>
+</pre>
+
+<h4>Void Tipi</h4>
+<p>Void tipi, hiçbir değerin mevcut olmadığını belirtir. Üç çeşit durumda kullanılır -</p>
+
+<h5>1-Fonksiyon void olarak döner</h5>
+<p>C de herhangi bir değer döndürmeyen çeşitli fonksiyonlar var ya da bunların boşa döndüğünü söyleyebilirsiniz. Dönüş değeri olmayan bir fonksiyonun dönüş tipi void’dir. Örneğin, void exit (int status);</p>
+
+<h5>2-Void olarak fonksiyon argümanları</h5>
+<p>C’de herhangi bir parametre kabul etmeyen çeşitli fonksiyonlar vardır. Parametresiz bir fonksiyon void’i kabul edebilir. Örneğin, int rand (void);</p>
+
+<h5>3-Void olarak İşaretçiler(pointer)</h5>
+<p>Void * türünde bir işaretçi, bir nesnenin adresini gösterir, tipini değil. Örneğin, bir bellek ayırma işlevi void * malloc (size_t size); Herhangi bir veri türüne atılabilecek boşluğa bir işaretçi döndürür.</p>
+
+
+
+<a href = "​https://www.tutorialspoint.com/cprogramming/c_data_types.htm">​https://www.tutorialspoint.com/cprogramming/c_data_types.htm</a></p>
+
+
+
+							<h4>
+							<a href = "c4.html">Bir sonraki yazıya buradan ulaşabilirsiniz.</a></h4>
+
+
+					    </div><!--//media-body-->
+				    </div><!--//media-->
+			    </div><!--//item-->
+			    <div class="item mb-5">
+				    <div class="media">
+
+				    	</section>
+
+
+    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+	        <small class="copyright">Para için <!--<i class="fas fa-heart" style="color: #fb866a;"></i> -->değil, <target=_"blank">insanlık için internet</small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+
+    
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+ 
+    
+
+</body>
+</html> 

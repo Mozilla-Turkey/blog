@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Mozilla Türkiye Gönüllü Topluluğu [C Öğreticisi 28 (Komut Satırı Argümanları) (SON)] </title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Mozilla Türkiye Gönüllü Topluluğu Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">			
+					<img class="profile-image mb-3 rounded-corners mx-auto" src="assets/images/mozilla-turkey.png" alt="image" >
+					<div class="bio mb-3">Topluluğumuzun öğretici, haberler gibi yazı içeriklerini burada paylaşacağız.<br> <!-- <a href="about.html">Daha fazlası için</a></div> //bio--> </div>
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="https://twitter.com/MozillaTurkey"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://github.com/Mozilla-Turkey/"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://discord.gg/YvMbm6X8xC"><i class="fab fa-discord fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Anasayfa</a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="blog-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Gönderiler<span class="sr-only">(current)</span></a>
+					</li>
+				<!--	<li class="nav-item">
+					    <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>Hakkımızda</a>
+					</li> -->
+				</ul>
+			</div>
+		</nav>
+    </header>
+
+    <div class="main-wrapper">
+	    
+	    <section>
+	    <!-- <section class="blog-list px-3 py-5 p-md-5"> -->
+		    <div class="container">
+			    <div class="item mb-5">
+				    <div class="media">
+					  
+					    <div class="media-body">
+						    <h2 class="title mb-1">C Öğreticisi 28 (Komut Satırı Argümanları) (SON)</h2>
+						    <br />
+						    <p>Bu yazılar <a href = "https://www.tutorialspoint.com/cprogramming" />https://www.tutorialspoint.com/cprogramming/</a> adresindeki yazı dizilerinin çevirileridir.</p>
+						    <p>Bazı değerleri yürütüldüklerinde komut satırından C programlarınıza iletmek mümkündür. Bu değerlere komut satırı argümanları denir ve çoğu kez programınız için özellikle kod içindeki bu değerleri sabit kodlamak yerine dışarıdan kontrol etmek istediğinizde önemlidir.</p>
+						    <p>Komut satırı bağımsız değişkenleri main () fonksiyonu bağımsız değişkenleri kullanılarak işlenir; burada argc, iletilen bağımsız değişkenlerin sayısını belirtir ve argv [], programa iletilen her bağımsız değişkeni işaret eden bir işaretçi dizisidir. Aşağıda, komut satırından sağlanan herhangi bir argüman olup olmadığını kontrol eden ve buna göre hareket eden basit bir örnek verilmiştir -</p>
+<pre>
+	<code>
+#include <stdio.h>
+int main( int argc, char *argv[] ) {
+if( argc == 2 ) {
+printf(“Verilen argüman %s\n”, argv[1]);
+}
+else if( argc > 2 ) {
+printf(“Cok fazla arguman verildi.\n”);
+}
+else {
+printf(“Bir arguman beklenmisti.\n”);
+}
+}
+	</code>
+</pre>
+<p>Kod bir argumanla derlenip çalıştırıldığında -</p>
+
+<pre>
+	<code>
+$./a.out testteyiz
+Verilen arguman testteyiz
+	</code>
+</pre>
+
+<p>Kod iki argumanla derlenip çalıştırıldığında -</p>
+
+<pre>
+	<code>
+$./a.out testteyiz1 testteyiz2
+Cok fazla arguman verildi.
+	</code>
+</pre>
+
+<p>Kod argumansız derlenip çalıştırıldığında -</p>
+
+<pre>
+	<code>
+$./a.out
+Bir arguman beklenmisti
+	</code>
+</pre>
+
+<p>Argv [0] ‘ın programın adını tuttuğu ve argv [1] girilen ilk komut satırı argümanının bir göstergesidir ve * argv [n] son argümandır.Herhangi bir bağımsız değişken sağlanmazsa, argc bir olacaktır ve bir bağımsız değişken iletirseniz argc 2 olarak ayarlanır.</p>
+<p>Komut satırı bağımsız değişkenlerini boşlukla ayrılmış olarak sağlarsınız, ancak bağımsız değişkenin kendisinde boşluk varsa, bu bağımsız değişkenleri çift tırnak işareti “” veya tek tırnak işareti “ içine koyarak iletebilirsiniz. Yukarıdaki örneği bir kez daha yazalım, burada program adını yazdıracağız ve ayrıca çift tırnak içine alarak bir komut satırı argümanı geçirelim-</p>
+<pre>
+	<code>
+#include <stdio.h>
+int main( int argc, char *argv[] ) {
+printf(“Program adi %s\n”, argv[0]);
+if( argc == 2 ) {
+printf(“Verilen arguman %s\n”, argv[1]);
+}
+else if( argc > 2 ) {
+printf(“Cok fazla arguman verildi.\n”);
+}
+else {
+printf(“Bir arguman beklenmisti.\n”);
+}
+}
+	</code>
+</pre>
+
+<p>Yukarıdaki kod, boşlukla ayrılmış ancak çift tırnak içinde tek bir bağımsız değişkenle derlendiğinde ve yürütüldüğünde, aşağıdaki sonucu verir.</p>
+<pre>
+	<code>
+$./a.out “testteyiz1 testteyiz2”
+Program adi ./a.out
+Verilen arguman testteyiz1 testteyiz2
+	</code>
+</pre>
+<a href = "https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm">https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm</a></p>
+
+
+
+							<h4>
+							Bir sonraki yazı dizimizde görüşmek üzere...</h4>
+
+
+					    </div><!--//media-body-->
+				    </div><!--//media-->
+			    </div><!--//item-->
+			    <div class="item mb-5">
+				    <div class="media">
+
+				    	</section>
+
+
+    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+	       <small class="copyright">Para için <!--<i class="fas fa-heart" style="color: #fb866a;"></i> -->değil, <target=_"blank">insanlık için internet</small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+    
+
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+   
+
+</body>
+</html> 

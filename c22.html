@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Mozilla Türkiye Gönüllü Topluluğu [C Öğreticisi 22(Başlık Dosyaları)] </title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Mozilla Türkiye Gönüllü Topluluğu Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">			
+					<img class="profile-image mb-3 rounded-corners mx-auto" src="assets/images/mozilla-turkey.png" alt="image" >
+					<div class="bio mb-3">Topluluğumuzun öğretici, haberler gibi yazı içeriklerini burada paylaşacağız.<br> <!-- <a href="about.html">Daha fazlası için</a></div> //bio--> </div>
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="https://twitter.com/MozillaTurkey"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://github.com/Mozilla-Turkey/"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://discord.gg/YvMbm6X8xC"><i class="fab fa-discord fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Anasayfa</a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="blog-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Gönderiler<span class="sr-only">(current)</span></a>
+					</li>
+					<!-- <li class="nav-item">
+					    <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>Hakkımızda</a>
+					</li> -->
+				</ul>
+			</div>
+		</nav>
+    </header>
+
+    <div class="main-wrapper">
+	    
+	    <section>
+	    <!-- <section class="blog-list px-3 py-5 p-md-5"> -->
+		    <div class="container">
+			    <div class="item mb-5">
+				    <div class="media">
+					  
+					    <div class="media-body">
+						    <h2 class="title mb-1">C Öğreticisi 22(Başlık Dosyaları)</h2>
+						    <br />
+						    <p>Bu yazılar <a href = "https://www.tutorialspoint.com/cprogramming" />https://www.tutorialspoint.com/cprogramming/</a> adresindeki yazı dizilerinin çevirileridir.</p>
+						    <p>Başlık dosyaları, “.h” uzantısı ile biten C fonksiyon tanımlamaları ve makro tanımlamalarını içeren birkaç kaynak dosya arasında paylaşılan dosyalardır. İki tip başlık dosyası vardır: programcının yazdığı başlık dosyaları ve derleyici ile gelen başlık dosyaları.</p>
+			
+<p>Bir başlık dosyasına kullanmak için C önişlemcisine #include yönergesini vermelisiniz, tıpkı derleyicinizle gelen stdio.h başlık dosyasını içerdiği gibi.</p>
+<p>Bir başlık dosyasını dahil etmek başlık dosyasından içeriği kopyalamaya eşittir ama bunu yapmadık çünkü bu hataya sebep olur ve başlık dosyasındaki içerikleri kaynak koda kopyalamak iyi bir fikir değildir, özellikle de programda birden çok kaynak kodunuz varsa.</p>
+<p>C ve C++ basit pratiklerinde programlar sabitleri, makroları, sistem genelindeki global değişkenleri ve fonksiyon prototiplerini başlık dosyalarında tutmamız ve bu başlık dosyalarını gerek olan yerlere eklememiz şeklinde çalışır.</p>
+
+
+<h3>Include(Dahil et) Sözdizimi</h3>
+<p>#include yönergesi, geçerli kaynak dosyanın geri kalanına devam etmeden önce C önişlemcisini belirtilen dosyayı girdi olarak tarayarak çalışır. Önişlemciden çıktı, önceden oluşturulmuş çıktıyı ve ardından dahil edilen dosyadan çıkan çıktıyı ve onun da ardından #include yönergesinden sonra metinden gelen çıktıyı içerir.</p>
+<p>Örneğin, eğer baslikDosyam.h isimli bir başlık dosyası açtıysanız -</p>
+
+<pre>
+	<code>
+int x;
+#include “baslikDosyam.h”
+int main (void) {
+puts (test ());
+}
+	</code>
+</pre>
+
+
+<p>Derleyici program.c’yi şöyle çalıştırır-</p>
+<pre>
+	<code>
+int x;
+char *test (void);
+int main (void) {
+puts (test ());
+}
+	</code>
+</pre>
+
+<h3>Sadece Bir Kez Başlıklanabilirler</h3>
+
+<p>Bir başlık dosyası iki kez dahil edilirse, derleyici içeriğini iki kez işler ve hataya neden olur. Bunu önlemenin standart yolu, dosyanın tüm gerçek içeriğini şu şekilde bir koşulda işlemektir -</p>
+<pre>
+	<code>
+#ifndef BASLIK_DOSYASI
+#define BASLIK_DOSYASI
+tüm başlık dosyasının dosyası
+#endif
+	</code>
+</pre>
+
+<p>Bu yapı yaygın olarak #ifndef sargısı olarak bilinir. Başlık tekrar eklendiğinde, koşul yanlış olacaktır, çünkü BASLIK_DOSYASI tanımlanmıştır. Önişlemci dosyanın tüm içeriğini atlar ve derleyici dosyayı iki kez görmez.</p>
+
+<h3>Hesaplanmış İçerme</h3>
+
+<p>Bazen programınıza dahil edilecek birkaç farklı başlık dosyasından birini seçmek gerekebilir. Örneğin, farklı işletim sistemlerinde kullanılacak yapılandırma parametrelerini belirtebilirler.</p>
+<p>Aşağıdaki koşul serileri ile bunu yapabilirsiniz -</p>
+<pre>
+	<code>
+#if SYSTEM_1
+# include “system_1.h”
+#elif SYSTEM_2
+# include “system_2.h”
+#elif SYSTEM_3
+…
+#endif
+	</code>
+</pre>
+
+<p>Ancak büyüdükçe sıkıcı hale gelir, bunun yerine önişlemci başlık adı için bir makro kullanma yeteneği sunar. Buna hesaplanmış içerme denir. #include öğesinin doğrudan argümanı olarak bir başlık adı yazmak yerine, buraya bir makro adı koyabilirsiniz -</p>
+<pre>
+	<code>
+#define SYSTEM_H “system_1.h”
+…
+#include SYSTEM_H
+	</code>
+</pre>
+
+<p>SYSTEM_H genişletilecek ve önişlemci system_1.h dosyasını #include ilk başta bu şekilde yazılmış gibi arayacaktır. SYSTEM_H, Makefile tarafından -D seçeneği ile tanımlanabilir.</p>
+
+
+<a href = "https://www.tutorialspoint.com/cprogramming/c_header_files.htm">https://www.tutorialspoint.com/cprogramming/c_header_files.htm</a></p>
+
+
+
+							<h4>
+							<a href = "c23.html">Bir sonraki yazıya buradan ulaşabilirsiniz.</a></h4>
+
+
+					    </div><!--//media-body-->
+				    </div><!--//media-->
+			    </div><!--//item-->
+			    <div class="item mb-5">
+				    <div class="media">
+
+				    	</section>
+
+
+    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+	        <small class="copyright">Para için <!--<i class="fas fa-heart" style="color: #fb866a;"></i> -->değil, <target=_"blank">insanlık için internet</small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+  
+
+    
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+   
+</body>
+</html> 

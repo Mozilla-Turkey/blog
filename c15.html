@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Mozilla Türkiye Gönüllü Topluluğu [C Öğreticisi 15 (Yapılar(Structures)] </title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Mozilla Türkiye Gönüllü Topluluğu Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">			
+					<img class="profile-image mb-3 rounded-corners mx-auto" src="assets/images/mozilla-turkey.png" alt="image" >
+					<div class="bio mb-3">Topluluğumuzun öğretici, haberler gibi yazı içeriklerini burada paylaşacağız.<br> <!-- <a href="about.html">Daha fazlası için</a></div> //bio--> </div>
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="https://twitter.com/MozillaTurkey"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://github.com/Mozilla-Turkey/"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://discord.gg/YvMbm6X8xC"><i class="fab fa-discord fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Anasayfa</a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="blog-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Gönderiler<span class="sr-only">(current)</span></a>
+					</li>
+				<!--	<li class="nav-item">
+					    <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>Hakkımızda</a>
+					</li> -->
+				</ul>
+			</div>
+		</nav>
+    </header>
+
+    <div class="main-wrapper">
+	    
+	    <section>
+	    <!-- <section class="blog-list px-3 py-5 p-md-5"> -->
+		    <div class="container">
+			    <div class="item mb-5">
+				    <div class="media">
+					  
+					    <div class="media-body">
+						    <h2 class="title mb-1">C Öğreticisi 15 (Yapılar(Structures)</h2>
+						    <br />
+						    <p>Bu yazılar <a href = "https://www.tutorialspoint.com/cprogramming" />https://www.tutorialspoint.com/cprogramming/</a> adresindeki yazı dizilerinin çevirileridir.</p>
+						    <p>Diziler birçok aynı tipte veri değişkenlerini bir arada tutmaya yarar. Benzer bir şekilde, yapı(structure) C’de bulunan farklı türde veri öğelerinin birleştirilmesine izin veren kullanıcı tarafından tanımlanan bir veri türüdür(tipi).</p>
+
+						    <p>Yapılar bir kaydı temsil etmek için kullanılır. Kitaplarınızı kütüphanede takip etmek istediğinizi düşünelim. Her kitapla ilgili aşağıdaki bilgileri izlemek isteyebilirsiniz -</p>
+
+						    <p>Başlık</p>
+						    <p>Yazar</p>
+						    <p>Konu</p>
+						    <p>Kitap Kimliği</p>
+
+
+<h3>Yapı Tanımlamak</h3>
+
+<p>Yapı tanımlamak için, struct beyanını kullanmalısınız. Struct beyanı birden çok üyesi olan yeni bir veri türü(tipi) tanımlar.</p>
+<p>Struct beyanının formatı şöyledir-</p>
+
+<pre>
+	<code>
+struct [struct adı] {
+üye tanımlaması;
+üye tanımlaması;
+…
+üye tanımlaması;
+} [bir ya da daha çok struct değişkeni];
+	</code>
+</pre>
+
+<p>Struct adı isteğe bağlıdır ve her üye tanımı int i; float f gibi normal bir değişken tanımıdır. Yapının tanımının sonunda, son noktalı virgülden önce, bir veya daha fazla yapı değişkeni belirtebilirsiniz, isteğe bağlıdır. Kitap yapısını tanımlama yolumuz -</p>
+
+
+<pre>
+	<code>
+struct Kitaplar {
+char baslik[50];
+char yazar[50];
+char konu[100];
+int kitapKimligi;
+} kitap;
+	</code>
+</pre>
+
+<h3>Yapı Üyelerine Erişim</h3>
+
+<p>Yapı üyelerine erişim için üye erişim operatörü (.) kullanılır. Üye erişim operatörü yapı değişkeni adı ile erişmek istediğimiz yapı üyesi arasında bir periyot olarak kullanılır. Yapı türü değişkenlerini tanımlamak için struct anahtar sözcüğünü kullanırsınız. Aşağıdaki örnek bir program bir yapının nasıl kullanılacağını gösterir -</p>
+
+<pre>
+	<code>
+#include <stdio.h>
+#include <string.h>
+struct Kitaplar {
+char baslik[50];
+char yazar[50];
+char konu[100];
+int kitapKimligi;
+};
+int main( ) {
+struct Kitaplar kitap1; /* Kitaplar tipli kitap1 tanımlaması */
+struct Kitaplar kitap2; /* Kitaplar tipli kitap2 tanımlaması */
+/* kitap2 belirtimi */
+strcpy( kitap1.baslik, “C Programming”);
+strcpy( kitap1.yazar, “Nuha Ali”);
+strcpy( kitap1.konu, “C Programming Tutorial”);
+kitap1.kitapKimligi = 6495407;
+/* kitap2 belirtimi */
+strcpy( kitap2.baslik, “Telecom Billing”);
+strcpy( kitap2.yazar, “Zara Ali”);
+strcpy( kitap2.konu, “Telecom Billing Tutorial”);
+kitap2.kitapKimligi = 6495700;
+/* kitap1 bilgilerini yazdırır */
+printf( “kitap1 başlığı : %s\n”, kitap1.baslik);
+printf( “kitap1 yazarı : %s\n”, kitap1.yazar);
+printf( “kitap1 konusu : %s\n”, kitap1.konu);
+printf( “kitap1 kitap kimligi : %d\n”, kitap1.kitapKimligi);
+/* kitap2 bilgilerini yazdırır */
+printf( “kitap2 başlığı : %s\n”, kitap2.baslik);
+printf( “kitap2 yazarı : %s\n”, kitap2.yazar);
+printf( “kitap2 konusu : %s\n”, kitap2.konu);
+printf( “kitap2 kitap kimligi: %d\n”, kitap2.kitapKimligi);
+return 0;
+}
+	</code>
+</pre>
+<p>Kod derlenip çalıştırıldığında, aşağıdaki sonuç çıkar -</p>
+<pre>
+	<code>
+kitap1 başlığı : C Programming
+kitap1 yazarı : Nuha Ali
+kitap1 konusu : C Programming Tutorial
+kitap1 kitap kimligi : 6495407
+kitap2 başlığı : Telecom Billing
+kitap2 yazarı : Zara Ali
+kitap2 konusu : Telecom Billing Tutorial
+kitap2 kitap kimligi: 6495700
+	</code>
+</pre>
+
+<h3>Fonksiyon Argümanları Olarak Yapılar</h3>
+<p>Bir yapıyı, diğer herhangi bir değişkeni veya işaretçiyi geçirdiğiniz gibi fonksiyon bağımsız değişkeni olarak iletebilirsiniz.</p>
+
+<pre>
+	<code>
+double maaş = dizi[9];
+	</code>
+</pre>
+<p>Bu kod bizi dizinin 10.elemanına götürür, Aşağıdaki kod, bildirim, atama ve dizilere erişme’yi gösterir -</p>
+<pre>
+	<code>
+#include <stdio.h>
+#include <string.h>
+struct Kitaplar {
+char baslik[50];
+char yazar[50];
+char konu[100];
+int kitapKimligi;
+};
+/* fonksiyon tanımalamsı */
+void kitapYazdir( struct Kitaplar kitap );
+int main( ) {
+struct Kitaplar kitap1; /* Kitaplar tipli kitap1 tanımlaması */
+struct Kitaplar kitap2; /* Kitaplar tipli kitap2 tanımlaması */
+/* kitap1 belirtimi */
+strcpy( kitap1.baslik, “C Programming”);
+strcpy( kitap1.yazar, “Nuha Ali”);
+strcpy( kitap1.konu, “C Programming Tutorial”);
+Book1.kitapkimligi = 6495407;
+/* kitap2 belirtimi */
+strcpy( kitap2.baslik, “Telecom Billing”);
+strcpy( kitap2.yazar, “Zara Ali”);
+strcpy( kitap2.konu, “Telecom Billing Tutorial”);
+kitap2.kitapKimligi = 6495700;
+/* kitap1 bilgilerini yazdır */
+kitapYazdir( kitap1 );
+/* kitap2 bilgilerini yazdır */
+kitapYazdir( kitap2 );
+return 0;
+}
+void kitapYazdir( struct Kitaplar kitap ) {
+printf( “kitap basligi : %s\n”, kitap.baslik);
+printf( “kitap yazari : %s\n”, kitap.yazar);
+printf( “kitap konusu : %s\n”, kitap.konu);
+printf( “kitap kimligi : %d\n”, kitap.kitapKimligi);
+}
+	</code>
+</pre>
+<p>Yukarıdaki kod derlenip çalıştırıldığında, takip eden sonuç ortaya çıkar -</p>
+<pre>
+	<code>
+kitap basligi : C Programming
+kitap yazari : Nuha Ali
+kitap konusu : C Programming Tutorial
+kitap kimligi : 6495407
+kitap basligi : Telecom Billing
+kitap yazari : Zara Ali
+kitap konusu : Telecom Billing Tutorial
+kitap kimligi: 6495700
+	</code>
+</pre>
+
+<h3>İşaretçilerden Yapılara</h3>
+<p>Yapılara işaretçiler, diğer herhangi bir değişkenin işaretçisini tanımladığınız şekilde tanımlayabilirsiniz -</p>
+<pre>
+	<code>
+struct Kitaplar *structIsaretcisi;
+	</code>
+</pre>
+
+<p>Şimdi, bir yapı değişkeninin adresini yukarıda tanımlanan işaretçi değişkeninde saklayabilirsiniz. Bir yapı değişkeninin adresini bulmak için yapının adından önce ‘&’; operatörü -</p>
+<pre>
+	<code>
+structIsaretcisi = &kitap1;
+	</code>
+</pre>
+
+<p>Bir yapının üyelerine o yapıya ait bir işaretçi kullanarak erişmek için, → işlecini aşağıdaki gibi kullanmalısınız -</p>
+<pre>
+	<code>
+structIsaretcisi->baslik;
+	</code>
+</pre>
+
+<p>Yapı işaretçisiyle örneği yeniden yazalım.</p>
+<pre>
+	<code>
+#include <stdio.h>
+#include <string.h>
+struct Kitaplar {
+char baslik[50];
+char yazar[50];
+char konu[100];
+int kitapKimligi;
+};
+/* fonksiyon tanımlaması */
+void kitapYazdir( struct Kitaplar kitap );
+int main( ) {
+struct Kitaplar kitap1; /* Kitaplar tipli kitap1 tanımlaması */
+struct Kitaplar kitap2; /* Kitaplar tipli kitap2 tanımlaması */
+/* kitap1 belirtimi */
+strcpy( kitap1.baslik, “C Programming”);
+strcpy( kitap1.yazar, “Nuha Ali”);
+strcpy( kitap1.konu, “C Programming Tutorial”);
+Book1.kitapkimligi = 6495407;
+/* kitap2 belirtimi */
+strcpy( kitap2.baslik, “Telecom Billing”);
+strcpy( kitap2.yazar, “Zara Ali”);
+strcpy( kitap2.konu, “Telecom Billing Tutorial”);
+kitap2.kitapKimligi = 6495700;
+/* kitap1 bilgilerini yazdır */
+kitapYazdir( kitap1 );
+/* kitap2 bilgilerini yazdır */
+kitapYazdir( kitap2 );
+return 0;
+}
+void kitapYazdir( struct Kitaplar kitap ) {
+printf( “kitap basligi : %s\n”, kitap->baslik);
+printf( “kitap yazari : %s\n”, kitap->yazar);
+printf( “kitap konusu : %s\n”, kitap->konu);
+printf( “kitap kimligi : %d\n”, kitap->kitapKimligi);
+}
+	</code>
+</pre>
+
+<p>Kod derlenip çalıştırıldığında, aşağıdaki sonuç çıkar -</p>
+<pre>
+	<code>
+kitap basligi : C Programming
+kitap yazari : Nuha Ali
+kitap konusu : C Programming Tutorial
+kitap kimligi : 6495407
+kitap basligi : Telecom Billing
+kitap yazari : Zara Ali
+kitap konusu : Telecom Billing Tutorial
+kitap kimligi: 6495700
+	</code>
+</pre>
+
+<h3>Bit Alanları</h3>
+<p>Bit Alanları, bir yapıdaki verilerin paketlenmesine izin verir. Bu, özellikle bellek veya veri depolama çok çok fazla olduğunda faydalıdır. Tipik örnekler -</p>
+<p>Birkaç nesneyi bir makine kelimesine paketleme. Örneğin. 1 bitlik bayraklar sıkıştırılabilir. Harici dosya biçimlerini okuma — standart olmayan dosya biçimleri, örneğin 9 bit tamsayılar olarak okunabilir.</p>
+<p>C bunu değişkenin arkasına bit uzunluğunu koyarak yapı tanımında yapabilmemizi sağlar. Örneğin -</p>
+<pre>
+	<code>
+struct paketlenmisYapi {
+unsigned int f1:1;
+unsigned int f2:1;
+unsigned int f3:1;
+unsigned int f4:1;
+unsigned int type:4;
+unsigned int my_int:9;
+} paket;
+	</code>
+</pre>
+
+<p>paketlenmisYapi burada 6 üye içerir: Dört adet 1 bitlik bayraklar f1..f3, 4 bitlik tip ve 9 bitlik my_int.</p>
+<p>C, alanın maksimum uzunluğunun bilgisayarın tamsayı kelime uzunluğundan küçük veya ona eşit olması şartıyla, yukarıdaki bit alanlarını mümkün olduğunca kompakt bir şekilde paketler.</p>
+<p>Aksi takdirde, bazı derleyiciler alanlar için bellek çakışmasına izin verirken, diğerleri bir sonraki kelimeyi bir sonraki kelimede saklar.</p>
+
+
+<a href = "​https://www.tutorialspoint.com/cprogramming/c_structures.htm">​https://www.tutorialspoint.com/cprogramming/c_structures.htm</a></p>
+
+
+
+							<h4>
+							<a href = "c16.html">Bir sonraki yazıya buradan ulaşabilirsiniz.</a></h4>
+
+
+					    </div><!--//media-body-->
+				    </div><!--//media-->
+			    </div><!--//item-->
+			    <div class="item mb-5">
+				    <div class="media">
+
+				    	</section>
+
+
+    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+	        <small class="copyright">Para için <!--<i class="fas fa-heart" style="color: #fb866a;"></i> -->değil, <target=_"blank">insanlık için internet</small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+ 
+
+</body>
+</html> 

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Mozilla Türkiye Gönüllü Topluluğu [C Öğreticisi 4 (Değişkenler)] </title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Mozilla Türkiye Gönüllü Topluluğu Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">			
+					<img class="profile-image mb-3 rounded-corners mx-auto" src="assets/images/mozilla-turkey.png" alt="image" >
+					<div class="bio mb-3">Topluluğumuzun öğretici, haberler gibi yazı içeriklerini burada paylaşacağız.<br> <!-- <a href="about.html">Daha fazlası için</a></div> //bio--> </div>
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="https://twitter.com/MozillaTurkey"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://github.com/Mozilla-Turkey/"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://discord.gg/YvMbm6X8xC"><i class="fab fa-discord fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Anasayfa</a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="blog-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Gönderiler<span class="sr-only">(current)</span></a>
+					</li>
+					<!-- <li class="nav-item">
+					    <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>Hakkımızda</a>
+					</li> -->
+				</ul>
+			</div>
+		</nav>
+    </header>
+
+    <div class="main-wrapper">
+	    
+	    <section>
+	    <!-- <section class="blog-list px-3 py-5 p-md-5"> -->
+		    <div class="container">
+			    <div class="item mb-5">
+				    <div class="media">
+					  
+					    <div class="media-body">
+						    <h2 class="title mb-1">C Öğreticisi 4 (Değişkenler)</h2>
+						    <br />
+						    <p>Bu yazılar <a href = "https://www.tutorialspoint.com/cprogramming" />https://www.tutorialspoint.com/cprogramming/</a> adresindeki yazı dizilerinin çevirileridir.</p>
+						    <p>Değişken, programlarımızın değiştirebileceği bir depolama alanına verilen addan başka bir şey değildir. C’deki her değişken, değişken belleğinin boyutunu ve düzenini belirleyen belirli bir türe sahiptir; o hafızaya kaydedilebilecek değerlerin aralığı; ve değişkene uygulanabilecek işlem kümesi gibi. Bir değişkenin adı harflerden, rakamlardan ve alt çizgi karakterinden oluşabilir. Bir harf veya alt çizgi ile başlamalıdır. Büyük ve küçük harfler farklıdır, çünkü C büyük / küçük harf duyarlıdır. Önceki bölümde açıklanan temel türlere göre, aşağıdaki temel değişken türleri olacaktır:</p>
+
+						     <p>char : Genellikle tek bir sekizli (bir bayt). Bu bir tamsayı türüdür.</p>
+
+						     <p>int : Makine için en doğal tamsayıdır.</p>
+
+						     <p>float : Tek duyarlıklı bir kayan nokta değeridir.</p>
+
+						     <p>double : Çift duyarlıklı kayan nokta değeridir.</p>
+
+						     <p>void : Türün yokluğunu temsil eder.</p>
+
+							<p>C programlama dili ayrıca, Numaralandırma, İşaretçi, Dizi, Yapı, Birlik vb. sonraki bölümlerde ele alacağımız diğer değişken türlerini tanımlamaya izin verir. Bu bölüm için sadece temel değişken türlerini çalışalım.</p>
+
+
+							<h3>C’de Değişken Tanımlama</h3>
+							<p>Bir değişken tanımı, derleyiciye değişken için nerede ve ne kadar depolama alanı oluşturulacağını bildirir. Bir değişken tanımı veri türünü belirtir ve bu türden bir veya daha fazla değişkenin listesini aşağıdaki gibi içerir -</p>
+
+							<pre>
+								<code>
+								tip değişken_listesi;
+								</code>
+							</pre>
+
+							<p>Burada, tür char, w_char, int, float, double, bool veya kullanıcı tanımlı herhangi bir nesneyi içeren geçerli bir C veri türü olmalıdır; ve değişken_listesi virgüllerle ayrılmış bir veya daha fazla tanımlayıcı addan oluşabilir. Bazı geçerli bildirimler burada gösterilmektedir -</p>
+							<pre>
+								<code>
+								int i, j, k;
+								char c, ch;
+								float f, maaş;
+								double d;
+								</code>
+							</pre>
+
+							<p>int i, j, k; i, j ve k değişkenlerini tanımlar; hangi derleyiciye int türünde i, j ve k isminde değişkenler oluşturma talimatı verir.</p>
+
+							<p>Değişkenler bildirimlerinde başlatılabilir (başlangıç değeri atanır). Başlatıcı, aşağıdaki gibi sabit bir ifade izleyen eşit bir işaretten oluşur -</p>
+							<pre>
+								<code>
+									tip değişken_adı = değer;
+								</code>
+							</pre>
+
+							<p>Bazı örnekler -</p>
+							<pre>
+								<code>
+									int d = 3, f = 5;
+									byte z = 22;
+									char x = ‘x’;
+								</code>
+							</pre>
+
+							<p>Başlatıcı içermeyen tanım için: statik saklama süresi olan değişkenler NULL ile dolaylı olarak başlatılır (tüm baytlar 0 değerine sahiptir); diğer tüm değişkenlerin başlangıç değeri tanımsızdır.</p>
+
+<h3>C Değişken Beyanı</h3>
+<p>Değişken bildirimi, derleyiciye verilen tür ve adda bir değişken bulunduğuna dair güvence sağlar, böylece derleyicinin değişkenle ilgili tam bir ayrıntıya gerek duymadan daha fazla derlemeye devam edebilmesi sağlanır. Bir değişken tanımının sadece derleme sırasındaki anlamı vardır, derleyicinin programı bağlama anında gerçek değişken tanımına ihtiyacı vardır.
+</p>
+<p>Değişken bildirimi, birden fazla dosya kullanırken ve değişkeninizi programın bağlanması sırasında kullanılabilecek dosyalardan birinde tanımladığınızda kullanışlıdır. Herhangi bir yerde değişken bildirmek için “extern” anahtar sözcüğünü kullanacaksınız. Bir değişkeni C programınızda birçok kez bildirebilseniz de, bir dosyada, işlevde veya bir kod bloğunda yalnızca bir kez tanımlanabilir.</p>
+
+
+<h4>Örnek</h4>
+<p>Aşağıdaki örneği deneyin; değişkenlerin en üstte bildirildiği, ancak ana işlev içinde tanımlandıkları ve ilklendirildikleri -</p>
+
+<pre>
+  <code>
+#include <stdio.h>
+// Variable declaration:
+extern int a, b;
+extern int c;
+extern float f;
+int main () {
+/* variable definition: */
+int a, b;
+int c;
+float f;
+/* actual initialization */
+a = 10;
+b = 20;
+c = a + b;
+printf(“value of c : %d \n”, c);
+f = 70.0/3.0;
+printf(“value of f : %f \n”, f);
+return 0;
+}
+  </code>
+</pre>
+<p> Yukarıdaki kod derlendiğinde ve çalıştırıldığında, aşağıdaki sonucu verir -</p>
+<pre>
+	<code>
+value of c : 30
+value of f : 23.333334
+	</code>
+</pre>
+<p>Aynı kavram, bildirimi sırasında bir işlev adı verdiğiniz işlev bildirimi için de geçerlidir ve gerçek tanımı başka bir yerde verilebilir. Örneğin -</p>
+<pre>
+  <code>
+// function declaration
+int func();
+int main() {
+// function call
+int i = func();
+}
+// function declaration
+int func() {
+return 0;
+}
+  </code>
+</pre>
+
+<h3>C’de Lvalues ve Rvalues</h3>
+<p>C’de iki tür ifade vardır:</p>
+
+<p><b>Lvalue</b>- Bir bellek konumuna başvuran ifadelere “lvalue” ifadeleri denir. Bir değer, atamanın sol veya sağ tarafı olarak görünebilir.</p>
+<p><b>Rvalue</b>- rvalue terimi, bellekteki bir adreste saklanan bir veri değerini ifade eder. Bir rvalue, kendisine atanmış bir değere sahip olmayan bir ifadedir; bu, bir rvalue’nun sağ tarafta görünebileceği ancak bir atamanın sol tarafında görünmeyeceği anlamına gelir.</p>
+
+<p>Değişkenler lvalue’dur ve bu nedenle bir atamanın sol tarafında görünebilirler. Sayısal değişmezler rvalue’dur ve bu nedenle atanmamış olabilirler ve sol tarafta görünemezler. Aşağıdaki geçerli ve geçersiz ifadelere bir göz atın -</p>
+
+<pre>
+  <code>
+int g = 20; // valid statement , geçerli
+10 = 20; // invalid statement; would generate compile-time error , //geçersiz
+  </code>
+</pre>
+
+
+<a href = "https://www.tutorialspoint.com/cprogramming/c_variables.htm">​https://www.tutorialspoint.com/cprogramming/c_variables.htm</a></p>
+
+
+
+							<h4>
+							<a href = "c5.html">Bir sonraki yazıya buradan ulaşabilirsiniz.</a></h4>
+
+
+					    </div><!--//media-body-->
+				    </div><!--//media-->
+			    </div><!--//item-->
+			    <div class="item mb-5">
+				    <div class="media">
+
+				    	</section>
+
+
+    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+	        <small class="copyright">Para için <!--<i class="fas fa-heart" style="color: #fb866a;"></i> -->değil, <target=_"blank">insanlık için internet</small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+
+    
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    
+
+</body>
+</html> 

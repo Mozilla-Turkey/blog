@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Mozilla Türkiye Gönüllü Topluluğu [C Öğreticisi 5 (Sabitler ve Değişmezler)] </title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Mozilla Türkiye Gönüllü Topluluğu Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">			
+					<img class="profile-image mb-3 rounded-corners mx-auto" src="assets/images/mozilla-turkey.png" alt="image" >
+					<div class="bio mb-3">Topluluğumuzun öğretici, haberler gibi yazı içeriklerini burada paylaşacağız.<br> <!-- <a href="about.html">Daha fazlası için</a></div> //bio--> </div>
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="https://twitter.com/MozillaTurkey"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://github.com/Mozilla-Turkey/"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://discord.gg/YvMbm6X8xC"><i class="fab fa-discord fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Anasayfa</a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="blog-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Gönderiler<span class="sr-only">(current)</span></a>
+					</li>
+					<!-- <li class="nav-item">
+					    <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>Hakkımızda</a>
+					</li> -->
+				</ul>
+			</div>
+		</nav>
+    </header>
+
+    <div class="main-wrapper">
+	    
+	    <section>
+	    <!-- <section class="blog-list px-3 py-5 p-md-5"> -->
+		    <div class="container">
+			    <div class="item mb-5">
+				    <div class="media">
+					  
+					    <div class="media-body">
+						    <h2 class="title mb-1">C Öğreticisi 5 (Sabitler ve Değişmezler)</h2>
+						    <br />
+						    <p>Bu yazılar <a href = "https://www.tutorialspoint.com/cprogramming" />https://www.tutorialspoint.com/cprogramming/</a> adresindeki yazı dizilerinin çevirileridir.</p>
+						    <p>Sabitler, programın yürütülmesi sırasında değiştiremeyeceği sabit değerler anlamına gelir. Bu sabit değerlere aynı zamanda değişmez denir.</p>
+
+						     <p>Sabitler, bir tamsayı sabiti, bir değişken sabiti, bir karakter sabiti veya bir değişmez katarı(string) gibi temel veri türlerinden herhangi biri olabilir. Numaralandırma sabitleri de vardır.</p>
+
+						     <p>Sabitler, tanımlarından sonra değerlerinin değiştirilememesi haricinde, normal değişkenler gibi ele alınır.</p>
+
+							<h3>Tamsayı Değişmezleri</h3>
+							<p>Bir tamsayı değişmezi ondalık, sekizli veya onaltılık bir sabit olabilir. Bir ön ek, taban veya sayı tabanını belirtir: onaltılık için 0x veya 0X, sekizlik için 0 veya ondalık için hiçbir şey.</p>
+							<p>Bir tamsayı değişmezi ayrıca sırasıyla işaretsiz veya uzun olarak U ve L’nin bir kombinasyonu olan bir son eke sahip olabilir. Son ek büyük veya küçük harf olabilir ve herhangi bir sırada olabilir.</p>
+							<p>İşte tamsayı değişmezlerinin bazı örnekleri -</p>
+<pre>
+<code>
+212 /* Legal */ yasal
+215u /* Legal */ yasal
+0xFeeL /* Legal */ yasal
+078 /* Illegal: 8 is not an octal digit */ yasadışı 8, sekizlik değil
+032UU /* Illegal: cannot repeat a suffix */ yasadışı ek tekrarlanamaz
+Aşağıda, çeşitli tamsayı değişmezlerinin diğer örnekleri verilmiştir -
+85 /* decimal */
+0213 /* octal */
+0x4b /* hexadecimal */
+30 /* int */
+30u /* unsigned int */
+30l /* long */
+30ul /* unsigned long */
+</code>
+</pre>
+
+
+<h3>Kayan Noktalı Değişmezler</h3>
+<p>Bir kayan nokta değişmezi bir tamsayı parçasına, bir ondalık basamağa, kesirli bir kısma ve bir üs parçasına sahiptir. Kayan nokta değişmezlerini ondalık biçiminde veya üstel biçimde temsil edebilirsiniz.
+</p>
+<p>Ondalık formu temsil ederken, ondalık nokta, üs ya da her ikisini de içermelisiniz; üstel formu temsil ederken, tamsayı kısmı, kesirli kısım veya her ikisini de dahil etmelisiniz. İşaretli üs e veya E şeklinde tanıtılrı.</p>
+<p>İşte kayan nokta değişmezlerinden bazı örnekler -</p>
+<pre>
+  <code>
+3.14159 /* Legal */ yasal
+314159E-5L /* Legal */ yasal
+510E /* Illegal: incomplete exponent */ yasadışı eksik üs
+210f /* Illegal: no decimal or exponent */ yasadışı ondalık veya üs değil
+.e55 /* Illegal: missing integer or fraction */ yasadışı eksik tamsayı veya kesir
+  </code>
+</pre>
+
+<h3>Karakter Sabitleri</h3>
+<p>Karakter değişmezleri tekli tırnak işaretleri içine alınır, örneğin ‘x’ basit bir char tipi değişkende saklanabilir.</p>
+
+<p>Bir karakter değişmezi düz bir karakter (örneğin, ‘x’), bir kaçış dizisi (örneğin ‘\ t’) veya evrensel bir karakter (örneğin, ‘\ u02C0’) olabilir.</p>
+
+<p>C’de, ters eğik çizgiden önce geldiğinde, örneğin yeni satır (\ n) veya sekme (\ t) gibi özel anlamı temsil eden belirli karakterler vardır.</p>
+
+<img src="assets/images/karakter-sabitleri.png" width="600" height="350" alt="image" >
+
+<p>Birkaç kaçış dizisi karakteri göstermek için örnek aşağıdadır -</p>
+<pre>
+	<code>
+#include <stdio.h>
+int main() {
+printf(“Hello\tWorld\n\n”);
+return 0;
+}
+	</code>
+</pre>
+
+<p>Yukarıdaki kod derlendiğinde ve çalıştırıldığında, aşağıdaki sonucu verir -</p>
+
+<pre>
+	<code>
+Hello		World
+	</code>
+</pre>
+
+<h3>Katar(string) Değişmezleri</h3>
+<p>Katar(string) değişmezleri veya sabitleri “” çift tırnak işareti içine alınır. Bir dize, karakter değişmezlerine benzer karakterler içerir: düz karakterler, kaçış dizileri ve evrensel karakterler.</p>
+
+<p>Katar(string) değişmezleri kullanarak ve bunları white space’ler kullanarak ayırarak uzun bir çizgiyi birden fazla satıra bölebilirsiniz.</p>
+
+<p>Katar (string) değişmezlerin bazı örnekleri vardır. Üç formun tümü aynı dizelerdir.</p>
+
+<p>“hello, dear”</p>
+<p>“hello, \</p>
+<p>dear”</p>
+<p>“hello, “ “d” “ear”</p>
+
+<h3>Sabitleri Tanımlama</h3>
+<p>C de sabitleri tanımlamanın iki basit yolu vardır -</p>
+<p>- #Define önişlemcisini kullanmak.</p>
+<p>- Const anahtar sözcüğünü kullanmak.</p>
+
+<h3>#Define Ön İşlemcisi’ni Kullanmak</h3>
+<p>Aşağıda verilen bir sabit tanımlamak için #define önişlemcisini kullanma şeklidir -</p>
+<p> #define tanımlayıcı değeri/p>
+<p>Aşağıdaki örnek onu ayrıntılı olarak açıklamaktadır -</p>
+
+<pre>
+	<code>
+#include <stdio.h>
+#define LENGTH 10
+#define WIDTH 5
+#define NEWLINE ‘\n’
+int main() {
+int area;
+area = LENGTH * WIDTH;
+printf(“value of area : %d”, area);
+printf(“%c”, NEWLINE);
+return 0;
+}
+	</code>
+</pre>
+
+<p>Yukarıdaki kod derlendiğinde ve çalıştırıldığında, aşağıdaki sonucu verir -</p>
+<pre>
+	<code>
+value of area : 50
+	</code>
+</pre>
+
+<h3>Const Anahtar Sözcüğünü Kullanmak</h3>
+<p>Aşağıdaki gibi belirli bir türe sahip sabitleri bildirmek için const ön ekini kullanabilirsiniz -</p>
+<pre>
+	<code>
+const tip değişken = değer;
+	</code>
+</pre>
+
+<p>Aşağıdaki örnek onu ayrıntılı olarak açıklamaktadır -</p>
+<pre>
+	<code>
+#include <stdio.h>
+int main() {
+const int LENGTH = 10;
+const int WIDTH = 5;
+const char NEWLINE = ‘\n’;
+int area;
+area = LENGTH * WIDTH;
+printf(“value of area : %d”, area);
+printf(“%c”, NEWLINE);
+return 0;
+}
+	</code>
+</pre>
+
+<p>Yukarıdaki kod derlendiğinde ve çalıştırıldığında, aşağıdaki sonucu verir -</p>
+
+<pre>
+	<code>
+value of area : 50
+	</code>
+</pre>
+
+<p>CAPITALS’de sabitleri tanımlamanın iyi bir programlama uygulaması olduğuna dikkat edin.</p>
+
+<a href = "​https://www.tutorialspoint.com/cprogramming/c_constants.htm">​​https://www.tutorialspoint.com/cprogramming/c_constants.htm</a></p>
+
+
+
+							<h4>
+							<a href = "c6.html">Bir sonraki yazıya buradan ulaşabilirsiniz.</a></h4>
+
+
+					    </div><!--//media-body-->
+				    </div><!--//media-->
+			    </div><!--//item-->
+			    <div class="item mb-5">
+				    <div class="media">
+
+				    	</section>
+
+
+    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+	        <small class="copyright">Para için <!--<i class="fas fa-heart" style="color: #fb866a;"></i> -->değil, <target=_"blank">insanlık için internet</small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    
+</body>
+</html> 
