@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Chrome'da Bellek Güvenliği Ile Ilgili Bir Güncelleme (Google Security Blog Çevirisi) </title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Mozilla Türkiye Gönüllü Topluluğu Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">			
+					<img class="profile-image mb-3 rounded-corners mx-auto" src="mozilla-tr-blog/assets/images/mozilla-turkey.png" alt="image" >
+					<div class="bio mb-3">Topluluğumuzun öğretici, haberler gibi yazı içeriklerini burada paylaşacağız.<br> <!-- <a href="about.html">Daha fazlası için</a></div> //bio--> </div>
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="https://twitter.com/MozillaTurkey"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://github.com/Mozilla-Turkey/"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://discord.com/invite/7V5YFr2gNn"><i class="fab fa-discord fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCM0YAuZZEWZLuozw7iDjANg"><i class="fab fa-youtube fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Anasayfa</a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="blog-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Gönderiler<span class="sr-only">(current)</span></a>
+					</li>
+					<!-- <li class="nav-item">
+					    <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>Hakkımızda</a>
+					</li> -->
+				</ul>
+			</div>
+		</nav>
+    </header>
+
+    <div class="main-wrapper">
+	    
+	    <section>
+	    <!-- <section class="blog-list px-3 py-5 p-md-5"> -->
+		    <div class="container">
+			    <div class="item mb-5">
+				    <div class="media">
+					  
+					    <div class="media-body">
+						    <h2 class="title mb-1">Chrome'da Bellek Güvenliği Ile Ilgili Bir Güncelleme (Google Security Blog Çevirisi)</h2>
+						    <br />
+
+                            <p> Güvenlik, bir kedi-fare oyunu gibidir. Saldırganlar yenilikler yaptıkça, tarayıcıların bir adım önde olması için her zaman yeni savunmalar oluşturmaları gerekir. Chrome her zamankinden daha güçlü koruma alanlı ve site izolasyonu üzerine kurulu çok işlemli mimariye yatırım yaptı. Fuzzing(bulandırma) ile birleştirildiğinde, bunlar hala birincil savunma çizgilerimizdir, ama sınırlarına ulaşıyorlar ve vahşi saldırıları yenmek için artık yalnızca bu stratejiye güvenemeyiz.</p> <br />
+
+<p>Geçtiğimiz yıl ciddi güvenlik hatalarımızın %70’inden fazlasının bellek güvenliği problemleri olduğunu gösterdik. Bu hatalar C veya C++ dillerinde belleğin yanlış yorumlanmasına neden olan pointer(işaretçi) hatalarından kaynaklanıyordu.</p> <br />
+
+<p>Bu bir problem gibiydi! Ve kesinlikle bellek güvenliği, küresel yazılım mühendisliği topluluğu tarafından ciddiye alınması gereken bir konudur. Bu ayrıca bir fırsattır çünkü birçok hatanın aynı kökten gelen nedenleri vardır, yani hatalarımızın büyük bir kısmını tek adımda çözebiliriz.</p> <br />
+
+<p>Chrome, bu fırsatı değerlendirmek için üç geniş yolu araştırıyor:</p> <br />
+
+<p>1. Pointer’ların doğru olduğunu gösteren derleme-zamanı denetimleriyle C++’ı daha güvenli hale getirmek. 
+2. Pointer’ların doğru olduğunu gösteren çalışma zamanı denetimleriyle C++’ı daha güvenli hale getirmek.
+3. Kodumuzun bölümleri için bellek güvenliği olan bir dil kullanımını araştırmak. </p> <br />
+
+<p>“Derleme zamanı kontrolleri” Chrome daha cihazınıza ulaşmadan önce, Chrome’un inşası sırasında güvenliğin garanti edildiği anlamına gelir. “Çalışma zamanı”, Chrome cihazınızda çalışırken kontroller yaptığımız anlamına gelir. </p>
+
+<p> Çalışma zamanı denetimlerinin bir performans maliyeti vardır. Bir pointer’ın doğruluğunu kontrol etmek, bellek ve CPU zamanında sonsuz küçük bir maliyettir. Ancak milyonlarca pointer anlamına gelir.
+Ve Chrome performansı, birçoğu çok fazla belleğe sahip olmayan düşük güçlü mobil cihazlar kullanan milyarlarca kullanıcı için önemli olduğundan, bu kontrollerin artması web’in daha yavaş çalışmasına neden olur. </p> <br />
+
+<p>Ideal olarak, 1. seçeneği seçeriz - derleme zamanında C++’ı daha güvenli hale getiririz. Ne yazık ki dil bu şekilde tasarlanmamıştır. Bu alanda yaptığımız araştırma hakkında daha fazla bilgiyi <a href = " https://docs.google.com/document/d/e/2PACX-1vSt2VB1zQAJ6JDMaIA9PlmEgBxz2K5Tx6w2JqJNeYCy0gU4aoubdTxlENSKNSrQ2TXqPWcuwtXe6PlO/pub">Borrowing Trouble: The Difficulties Of A C++ Borrow-Checker</a>‘da bulabilirsiniz.</p> <br />
+
+<p>Bu nedenle, çoğunlukla 2. ve 3. seçeneklerle baş başa kalıyoruz - C++’ı daha güvenli (ama daha yavaş!) hale getiren veya farklı bir dil kullanımına başlatan. Chrome Güvenliği, bu yaklaşımların her ikisini de deniyor.</p> <br />
+
+<p>MiraclePtr ve ABSL/STL modlarındaki gibi C++ güvenlik çözümlerinde büyük yatırımlar göreceksiniz. Her durumda, sömürülebilir güvenlik hatalarımızın önemli bir bölümünü ortadan kaldırmayı umuyoruz, ancak aynı zamanda bazı performans cezaları da bekliyoruz. Örneğin, MiraclePtr hala refere edilebilecek belleği karantinaya alarak kullanım sonrası kullanım hatalarını önler. Birçok mobil cihazda bellek çok değerlidir ve bir kısmını karantinaya almak zordur. Bununla birlikte, MiraclePtr tarayıcı sürecindeki kullan-ardından-bırak hatalarının %50’den fazlasını ortadan kaldırma şansına sahiptir - bu şu anda Chrome için muazzam bir kazanç.</p> <br />
+
+
+<p>Buna paralel olarak, gelecekte Chrome’un bazı bölümleri için bir güvenli bellek dili kullanıp kullanamayacağımızı araştıracağız. Bu diller arasında önde gelen rakip, Mozilla’daki arkadaşlarımız tarafından icat edilen Rust. Bu(büyük ölçüde) derleme zamanı için güvenlidir; yani, Rust derleyicisi, kod, cihazınıza ulaşmadan önce pointer’lardaki hataları tespit eder ve bu nedenle performans cezası olmaz. C++ ve Rust’ı birlikte yeterince iyi çalıştırıp çalıştıramayacağımıza dair açık sorular var. Rust’ta yarın yeni büyük bileşenler yazmaya başlasak bile, güvenlik açıklarının önemli bir bölümünü uzun yıllar ortadan kaldırmamız pek olası değildir. Ve mevcut bileşenlerin parçalarını Rust’ta yazabilmemiz için dil sınırını yeterince “temiz” yapabilir miyiz? Henüz bilmiyoruz. Chromium kaynak kod ağacına sınırlı, kullanıcıya yönelik olmayan Rust deneyleri eklemeye başladık, ancak bunu henüz Chrome’un üretim sürümlerinde kullanmıyoruz - deneysel bir aşamadayız.</p> <br />
+
+<p>Bu yüzden her iki stratejiyi de paralel olarak takip ediyoruz. C++’ı daha güvenli hale getirme maceralarımız ve Chrome’da yeni bir dil deneme çabalarımız hakkında güncellemeler için bu alanı izleyin. </p> <br />
+						    
+<a href ="https://security.googleblog.com/2021/09/an-update-on-memory-safety-in-chrome.html">Adresindeki metinden çevrilmiştir.</a>
+
+
+					    </div><!--//media-body-->
+				    </div><!--//media-->
+			    </div><!--//item-->
+			    <div class="item mb-5">
+				    <div class="media">
+
+				    	</section>
+
+
+    <footer class="footer text-center py-2 theme-bg-dark">
+		  
+            <small class="copyright">Para için <!--<i class="fas fa-heart" style="color: #fb866a;"></i> -->değil, <target=_"blank">insanlık için internet</small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+    
+    
+    
+
+    
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+   
+    
+
+</body>
+</html> 
